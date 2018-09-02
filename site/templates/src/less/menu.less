@@ -1,0 +1,33 @@
+.menu {
+  padding:15px 0;
+  &__grid {
+    display:flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    display:inline-block;
+    width: 130px;
+    background-color:pink;
+  }
+  &__nav {
+    flex-grow: 0;
+    display:flex;
+  }
+  &__item {
+    display:inline-block;
+  }
+  &__link {
+    display:block;
+    padding:10px 15px;
+    font-family: "Roboto Condensed",arial,sans-serif;
+    font-size:14px;
+    color:white;
+    transition:all 0.2s;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover {
+      background-color:#d78f31;
+      color:white;
+    }
+  }
+}
