@@ -1,0 +1,86 @@
+.text-block {
+  padding: 90px 0 180px 0;
+  &__grid {
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: -150px;
+  }
+  &__cell {
+    box-sizing: border-box;
+    padding-left: 150px;
+    width:50%;
+  }
+  &__img-wrapper {
+    position:relative;
+    z-index:1;
+    &:after {
+      content:"";
+      position: absolute;
+      z-index:-1;
+      height:100%;
+      width:100%;
+      left:50px;
+      top:50px;
+      background-size:150px 150px;
+      background-image:url(../img/lines.png);
+      opacity:0.1;
+    }
+  }
+  &__img {
+    width:100%;
+  }
+  &__heading {
+    font-family: "Gilroy ExtraBold",arial,sans-serif;
+    font-weight: 700;
+    font-size:34px;
+    padding-left: 30px;
+    position:relative;
+    line-height: 1;
+    &:before {
+      content:"";
+      position:absolute;
+      top:10px;
+      left:0;
+      bottom:5px;
+      width:3px;
+      background-color:#c2a47e;
+    }
+  }
+  &__text {
+    margin-top:30px;
+    font-weight: 200;
+  }
+  &__list {
+    margin-top:30px;
+    font-weight: 200;
+  }
+  &__item {
+    padding-left: 30px;
+    position:relative;
+    &:not(:first-child) {
+      margin-top:15px;
+    }
+    &:before {
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      height:22px;
+      width:15px;
+      background-repeat: no-repeat;
+      background-size:contain;
+      background-position: 50% 50%;
+      background-image:url(../img/right-arrow.svg);
+    }
+  }
+  &__quote {
+    font-weight: 200;
+    font-size:24px;
+    margin-top:30px;
+  }
+  &__name {
+    font-size:14px;
+    font-weight: 200;
+    font-style: italic;
+  }
+}
