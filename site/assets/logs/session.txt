@@ -1,3 +1,0 @@
-2018-08-30 14:34:21	developer	http://engine.cw40247.tmweb.ru/processwire/login/	Successful login for 'developer'
-2018-09-03 08:17:48	guest	http://engine.cw40247.tmweb.ru/processwire/login/	Error: Failed login for 'admin' - Unknown user
-2018-09-03 08:17:55	developer	http://engine.cw40247.tmweb.ru/processwire/login/	Successful login for 'developer'
