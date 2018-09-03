@@ -82,44 +82,52 @@
       </div>
     </section>
     <?php endif; ?>
-<?php endforeach; ?>
-<section class="benefits">
-  <div class="container container_center">
-    <div class="benefits__header">
-      <h3 class="benefits__heading">Мы гордимся</h3>
-      <p class="benefits__description">
-        Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
-      </p>
-      <div class="benefits__button-wrapper">
-        <a href="" class="benefits__button">получить консультацию</a>
-      </div>
-    </div>
-    <div class="benefits__wrapper">
-      <div class="benefits__grid">
-        <div class="benefits__cell">
-          <div class="benefits__item benefits-block">
-            <div class="benefits-block__header">
-              <div class="benefits-block__img"></div>
-              <p class="benefits-block__heading">Название первое</p>
+    <?php if ($block->repeater_matrix_type == 7): ?>
+    <section class="benefits">
+      <div class="container container_center">
+        <div class="benefits__header">
+          <h3 class="benefits__heading"><?=$block->benefits_title?></h3>
+          <p class="benefits__description">
+              <?=$block->benefits_subtitle?>
+          </p>
+          <div class="benefits__button-wrapper">
+            <a href="" class="benefits__button">получить консультацию</a>
+          </div>
+        </div>
+        <div class="benefits__wrapper">
+          <div class="benefits__grid">
+            <?php foreach ($block->benefits_items as $item): ?>
+              <div class="benefits__cell">
+              <div class="benefits__item benefits-block">
+                <div class="benefits-block__header">
+                  <div class="benefits-block__img"></div>
+                  <p class="benefits-block__heading"><?=$item->benefits_item_header?></p>
+                </div>
+                <p class="benefits-block__text">
+                    <?=$item->benefits_item_content?>
+                </p>
+              </div>
             </div>
-            <p class="benefits-block__text">
-              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
-            </p>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="welcome">
-  <h3 class="welcome__subheading">Добро пожаловать</h3>
-  <h2 class="welcome__heading">Мы гордимся нашими работами</h2>
-  <p class="welcome__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у
-    себя в постели превратился.</p>
-  <div class="welcome__button-wrapper">
-    <a href="" class="welcome__button">узнать подробнее</a>
-  </div>
-</section>
+    </section>
+    <?php endif; ?>
+    <?php if ($block->repeater_matrix_type == 5): ?>
+    <section class="welcome">
+      <h3 class="welcome__subheading"><?=$block->lineButton_header?></h3>
+      <h2 class="welcome__heading"><?=$block->lineButton_title?></h2>
+      <p class="welcome__description"><?=$block->lineButton_subtitle?></p>
+      <div class="welcome__button-wrapper">
+        <a href="" class="welcome__button">узнать подробнее</a>
+      </div>
+    </section>
+    <?php endif; ?>
+
+<?php endforeach; ?>
+
+
 <section class="prices">
   <div class="container container_center">
     <h3 class="prices__subheading">Добро пожаловать</h3>
