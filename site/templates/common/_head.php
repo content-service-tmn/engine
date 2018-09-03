@@ -3,8 +3,9 @@
 <meta name="description" content="description">
 <meta name="author" content="Vasiliy">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href= <?= $config->urls->templates . "assets/css/template.css"?>>
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400" rel="stylesheet">
 <?php // generate css / js
   $css = AIOM::CSS(array(
     'assets/less/template.less'
@@ -23,4 +24,3 @@
   //   "assets/js/template.js"
   // ));
 ?>
-<link rel="stylesheet" type="text/css" href="<?= $css; ?>">
