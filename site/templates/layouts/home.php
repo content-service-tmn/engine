@@ -1,27 +1,55 @@
-<!-- <section class="news">
+<section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
     <h2 class="news__heading">Мы гордимся нашими работами</h2>
     <div class="news__wrapper">
       <div class="news__grid">
-        <div class="news__cell news__cell_60">
-          <div class="news-item">
-            <p class="news-item__date">Декабрь 3, 2018</p>
-            <h3 class="news-item__heading">Gilette</h3>
-            <p class="news-item__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна...</p>
+        <div class="news__cell news__cell_40">
+          <div class="news__grid">
+            <div class="news__cell">
+              <div class="news__item">
+                <div class="news-block">
+                  <p class="news-block__date">Декабрь 3, 2018</p>
+                  <h3 class="news-block__heading">Gilette</h3>
+                  <p class="news-block__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна...</p>
+                </div>
+              </div>
+            </div>
+            <div class="news__cell">
+              <div class="news__item">
+                <div class="news__img news__img_rect"></div>
+                <div class="news-block">
+                  <p class="news-block__date">Декабрь 3, 2018</p>
+                  <h3 class="news-block__heading">Gilette</h3>
+                  <p class="news-block__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна...</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="news__cell news__cell_40">
-          <div class="news-item">
-            <p class="news-item__date">Декабрь 3, 2018</p>
-            <h3 class="news-item__heading">Gilette</h3>
-            <p class="news-item__text">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна...</p>
+        <div class="news__cell news__cell_60">
+          <div class="news__grid">
+            <div class="news__cell">
+              <div class="news__item">
+                <div class="news__img news__img_big"></div>
+              </div>
+            </div>
+            <div class="news__cell news__cell_60">
+              <div class="news__item">
+                <div class="news__img"></div>
+              </div>
+            </div>
+            <div class="news__cell news__cell_40">
+              <div class="news__item">
+                <div class="news__img"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
 <section class="header">
     <div class="header__grid">
       <div class="header__menu menu">
