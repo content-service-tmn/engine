@@ -25,3 +25,8 @@
 2018-08-31 14:34:49	guest	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/AllInOneMinify/lib/Less/Cache.php
 2018-09-02 20:04:53	guest	http://engine.cw40247.tmweb.ru/	Maintenance/Copy new version of source file to target file: /site/templates/admin.php => /site/assets/cache/FileCompiler/site/templates/admin.php
 2018-09-02 20:04:53	guest	http://engine.cw40247.tmweb.ru/	Maintenance/Copy new version of source file to target file: /site/templates/common/_head.php => /site/assets/cache/FileCompiler/site/templates\common/_head.php
+2018-09-03 11:39:53	developer	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/TracyDebugger/tracy-master/src/tracy.php
+2018-09-03 11:39:53	developer	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/TracyDebugger/tracy-master/src/Tracy/Bar.php
+2018-09-03 11:39:53	developer	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/TracyDebugger/tracy-master/src/Tracy/BlueScreen.php
+2018-09-03 11:39:53	developer	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/TracyDebugger/tracy-master/src/Tracy/DefaultBarPanel.php
+2018-09-03 11:39:53	developer	http://engine.cw40247.tmweb.ru/	Compiled file: /site/modules/TracyDebugger/tracy-master/src/Tracy/Debugger.php
