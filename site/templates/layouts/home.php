@@ -52,6 +52,33 @@
       </div>
     </div>
 </section>
+<section class="text-block">
+  <div class="container container_center">
+    <div class="text-block__grid">
+      <div class="text-block__cell">
+        <div class="text-block__img-wrapper">
+          <img src="https://www.fing.edu.uy/inco/grupos/gsi/img/placeholder.png" alt="" class="text-block__img">
+        </div>
+      </div>
+      <div class="text-block__cell">
+        <h3 class="text-block__heading">Заголовок этого пункта примерно так</h3>
+        <p class="text-block__text">
+          Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спинон видел, стоило ему.
+        </p>
+        <ul class="text-block__list">
+          <li class="text-block__item">
+            Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил,
+          </li>
+          <li class="text-block__item">
+            Что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спинон видел, стоило ему.
+          </li>
+        </ul>
+        <p class="text-block__quote">Какая-то подпись</p>
+        <p class="text-block__name">Какая-то подпись</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="work">
   <div class="container container_center">
     <h3 class="work__subheading">Добро пожаловать</h3>
