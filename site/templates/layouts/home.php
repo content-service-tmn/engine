@@ -1,3 +1,21 @@
+<section class="more">
+  <h3 class="more__subheading">Добро пожаловать</h3>
+  <h2 class="more__heading">Мы гордимся нашими работами</h2>
+  <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
+  <form action="" class="form">
+    <div class="more__form">
+      <div class="more__element form__element">
+        <span class="form__label">узнать подробнее</span>
+        <input class="form__input"></input>
+      </div>
+      <div class="more__element form__submit submit">
+        <span class="submit__label">узнать подробнее</span>
+        <button class="submit__button"></button>
+      </div>
+    </div>
+  </form>
+</section>
+
 <section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
