@@ -1,4 +1,111 @@
 <?php namespace Processwire; ?>
+
+<section class="slideset-section">
+  <div class="container container_center">
+    <div data-uk-slideset="{default: 2}">
+      <div class="uk-slidenav-position">
+        <ul class="slideset uk-slideset">
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
+        <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+      </div>
+      <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
+    </div>
+  </div>
+</section>
+<section class="slideshow-section">
+  <div class="container container_center">
+    <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
+      <ul class="slideshow uk-slideshow">
+          <li class="slideshow__cell">
+            <div class="slideshow__item">
+              <div class="slideshow__img"></div>
+              <div class="slideshow__panel">
+                <h3 class="slideshow__subheading">фотозона</h3>
+                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+                <p class="slideshow__description">детский сад</p>
+              </div>
+              <div class="slideshow__panel">
+                <div class="slideshow__button-wrapper">
+                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slideshow__cell">
+            <div class="slideshow__item">
+              <div class="slideshow__img"></div>
+              <div class="slideshow__panel">
+                <h3 class="slideshow__subheading">фотозона</h3>
+                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+                <p class="slideshow__description">детский сад</p>
+              </div>
+              <div class="slideshow__panel">
+                <div class="slideshow__button-wrapper">
+                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+      <a href="" class="slideshow__nav nav nav_prev" data-uk-slideshow-item="previous"></a>
+      <a href="" class="slideshow__nav nav nav_next" data-uk-slideshow-item="next"></a>
+      <ul class="dotnav slideshow__dotnav uk-slideshow-nav uk-dotnav">
+        <li data-uk-slideshow-item="0"><a href=""></a></li>
+        <li data-uk-slideshow-item="1"><a href=""></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="more">
+  <h3 class="more__subheading">Добро пожаловать</h3>
+  <h2 class="more__heading">Мы гордимся нашими работами</h2>
+  <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
+  <form action="" class="form">
+    <div class="more__form">
+      <div class="more__element form__element">
+        <label class="form__label" for="more">узнать подробнее</label>
+        <input name="more" id="more" class="form__input"></input>
+      </div>
+      <div class="more__element form__submit submit">
+        <span class="submit__label">узнать подробнее</span>
+        <button class="submit__button"></button>
+      </div>
+    </div>
+  </form>
+</section>
+
 <section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -60,7 +167,9 @@
         <div class="header__menu menu">
           <div class="container container_center">
             <div class="menu__grid">
-              <a href="" class="menu__logo"></a>
+              <a href="" class="menu__logo logo">
+                <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+              </a>
               <ul class="menu__nav">
                   <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav!= "" && $item->anchorForNav != ""):  ?>
                     <li class="menu__item"><a href="#<?=$item->anchorForNav?>" class="menu__link"><?=$item->nameForNav?></a></li>
@@ -197,4 +306,3 @@
     </section>
     <?php endif; ?>
 <?php endforeach; ?>
-
