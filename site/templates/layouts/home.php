@@ -1,111 +1,5 @@
 <?php namespace Processwire; ?>
 
-<section class="slideset-section">
-  <div class="container container_center">
-    <div data-uk-slideset="{default: 2}">
-      <div class="uk-slidenav-position">
-        <ul class="slideset uk-slideset">
-          <li class="slideset__cell">
-            <div class="slideset__item">
-              <div class="slideset__img"></div>
-              <div class="slideset__panel">
-                <h3 class="slideset__subheading">фотозона</h3>
-                <h2 class="slideset__heading">В гостях у фиксиков</h2>
-                <p class="slideset__description">детский сад</p>
-              </div>
-            </div>
-          </li>
-          <li class="slideset__cell">
-            <div class="slideset__item">
-              <div class="slideset__img"></div>
-              <div class="slideset__panel">
-                <h3 class="slideset__subheading">фотозона</h3>
-                <h2 class="slideset__heading">В гостях у фиксиков</h2>
-                <p class="slideset__description">детский сад</p>
-              </div>
-            </div>
-          </li>
-          <li class="slideset__cell">
-            <div class="slideset__item">
-              <div class="slideset__img"></div>
-              <div class="slideset__panel">
-                <h3 class="slideset__subheading">фотозона</h3>
-                <h2 class="slideset__heading">В гостях у фиксиков</h2>
-                <p class="slideset__description">детский сад</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
-        <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
-      </div>
-      <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
-    </div>
-  </div>
-</section>
-<section class="slideshow-section">
-  <div class="container container_center">
-    <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
-      <ul class="slideshow uk-slideshow">
-          <li class="slideshow__cell">
-            <div class="slideshow__item">
-              <div class="slideshow__img"></div>
-              <div class="slideshow__panel">
-                <h3 class="slideshow__subheading">фотозона</h3>
-                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
-                <p class="slideshow__description">детский сад</p>
-              </div>
-              <div class="slideshow__panel">
-                <div class="slideshow__button-wrapper">
-                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="slideshow__cell">
-            <div class="slideshow__item">
-              <div class="slideshow__img"></div>
-              <div class="slideshow__panel">
-                <h3 class="slideshow__subheading">фотозона</h3>
-                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
-                <p class="slideshow__description">детский сад</p>
-              </div>
-              <div class="slideshow__panel">
-                <div class="slideshow__button-wrapper">
-                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
-                </div>
-              </div>
-            </div>
-          </li>
-      </ul>
-      <a href="" class="slideshow__nav nav nav_prev" data-uk-slideshow-item="previous"></a>
-      <a href="" class="slideshow__nav nav nav_next" data-uk-slideshow-item="next"></a>
-      <ul class="dotnav slideshow__dotnav uk-slideshow-nav uk-dotnav">
-        <li data-uk-slideshow-item="0"><a href=""></a></li>
-        <li data-uk-slideshow-item="1"><a href=""></a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="more" style="background-image:url(http://www.toca-ch.com/data/walls/131/26395607.jpg)">
-  <h3 class="more__subheading">Добро пожаловать</h3>
-  <h2 class="more__heading">Мы гордимся нашими работами</h2>
-  <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
-  <form action="" class="form">
-    <div class="more__form">
-      <div class="more__element form__element">
-        <label class="form__label" for="more">узнать подробнее</label>
-        <input name="more" id="more" class="form__input"></input>
-      </div>
-      <div class="more__element form__submit submit">
-        <span class="submit__label">узнать подробнее</span>
-        <button class="submit__button"></button>
-      </div>
-    </div>
-  </form>
-</section>
-
 <section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -258,8 +152,9 @@
                 <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
               </a>
               <ul class="menu__nav">
-                  <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav!= "" && $item->anchorForNav != ""):  ?>
-                    <li class="menu__item"><a href="#<?=$item->anchorForNav?>" class="menu__link"><?=$item->nameForNav?></a></li>
+                  <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+                    <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+                                              class="menu__link"><?= $item->nameForNav ?></a></li>
                   <?php endif; endforeach; ?>
               </ul>
             </div>
@@ -322,7 +217,7 @@
                 <div class="benefits__cell">
                   <div class="benefits__item benefits-block">
                     <div class="benefits-block__header">
-                      <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+                      <div class="benefits-block__img" style="background: url(<?= $item->benefits_item_icon->url ?>)"></div>
                       <p class="benefits-block__heading"><?= $item->benefits_item_header ?></p>
                     </div>
                     <p class="benefits-block__text">
@@ -388,6 +283,95 @@
             <p class="text-block__quote"><?= $block->picWithList_bottom_line1 ?></p>
             <p class="text-block__name"><?= $block->picWithList_bottom_line2 ?></p>
           </div>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+    <?php if ($block->repeater_matrix_type == 8): ?>
+        <?php
+        $placeholders = ["E-mail" => "E-mail", "Phone" => "Номер телефона"];
+        $validators = ["E-mail" => "", "Phone" => ""];
+        ?>
+    <section class="more">
+      <h3 class="more__subheading"><?= $block->inputBlock_header ?></h3>
+      <h2 class="more__heading"><?= $block->inputBlock_title ?></h2>
+      <p class="more__description"><?= $block->inputBlock_subtitle ?></p>
+      <form action="" class="form">
+        <div class="more__form">
+          <div class="more__element form__element">
+            <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
+            <input name="more" id="more" class="form__input"
+                   data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
+          </div>
+          <div class="more__element form__submit submit">
+            <span class="submit__label">узнать подробнее</span>
+            <button class="submit__button"></button>
+          </div>
+        </div>
+      </form>
+    </section>
+    <?php endif; ?>
+    <?php if ($block->repeater_matrix_type == 3): ?>
+    <section class="slideshow-section">
+      <div class="container container_center">
+        <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
+          <ul class="slideshow uk-slideshow">
+              <?php foreach ($block->slides as $slide): ?>
+                <li class="slideshow__cell">
+                  <div class="slideshow__item">
+                    <div class="slideshow__img" style="background: url(<?= $slide->slide_image->url ?>)">
+                    </div>
+                    <div class="slideshow__panel">
+                      <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
+                      <h2 class="slideshow__heading"><?= $slide->slide_title ?></h2>
+                      <p class="slideshow__description"><?= $slide->slide_subtitle ?></p>
+                    </div>
+                    <div class="slideshow__panel">
+                      <div class="slideshow__button-wrapper">
+                        <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              <?php endforeach; ?>
+          </ul>
+          <a href="" class="slideshow__nav nav nav_prev" data-uk-slideshow-item="previous"></a>
+          <a href="" class="slideshow__nav nav nav_next" data-uk-slideshow-item="next"></a>
+          <ul class="dotnav slideshow__dotnav uk-slideshow-nav uk-dotnav">
+              <?php foreach ($block->slides as $i => $slide): ?>
+                <li data-uk-slideshow-item="<?= $i ?>"><a href=""></a></li>
+              <?php endforeach; ?>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <?php endif; ?>
+
+
+    <?php if ($block->repeater_matrix_type == 8): ?>
+    <section class="slideset-section">
+      <div class="container container_center">
+        <div data-uk-slideset="{default: 2}">
+          <div class="uk-slidenav-position">
+            <ul class="slideset uk-slideset">
+                <?php foreach ($block->slides as $slide): ?>
+                  <li class="slideset__cell">
+                    <div class="slideset__item">
+                      <div class="slideset__img" style="background: url(<?= $slide->slide_image->url ?>)"></div>
+                      <div class="slideset__panel">
+                        <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
+                        <h2 class="slideset__heading"><?= $slide->slide_title ?></h2>
+                        <p class="slideset__description"><?= $slide->slide_subtitle ?></p>
+                      </div>
+                    </div>
+                  </li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
+            <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+          </div>
+          <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
         </div>
       </div>
     </section>

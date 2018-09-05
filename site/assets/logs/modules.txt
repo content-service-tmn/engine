@@ -1,2 +1,7 @@
 2018-08-30 14:33:36	guest	http://engine.cw40247.tmweb.ru/install.php	Saved module info caches
 2018-08-30 14:33:36	guest	http://engine.cw40247.tmweb.ru/http404/	Saved module info caches
+2018-09-05 13:54:10	developer	http://engine.cw40247.tmweb.ru/processwire/module/download/	Saved module info caches
+2018-09-05 13:54:12	developer	http://engine.cw40247.tmweb.ru/processwire/module/download/	Saved module info caches
+2018-09-05 13:54:15	developer	http://engine.cw40247.tmweb.ru/processwire/module/	Installed module 'FieldtypeSelect'
+2018-09-05 13:54:16	developer	http://engine.cw40247.tmweb.ru/processwire/module/	Saved module info caches
+2018-09-05 14:23:10	developer	http://engine.cw40247.tmweb.ru/processwire/module/edit?name=FieldtypeSelect	Saved module 'FieldtypeSelect' config data
