@@ -1,5 +1,5 @@
 .header {
-  background-color:transparent;
+  background-color:#545454;
   height:100vh;
   &__grid {
     display:flex;
@@ -20,24 +20,24 @@
     text-align: center;
     font-weight: 700;
     font-size:30px;
-    color:@dark-color;
+    color:white;
   }
   &__heading {
     margin-top:30px;
     text-align: center;
-    font-family: @heading-font;
+    font-family: "Gilroy Extrabold",arial,sans-serif;
     font-weight: 800;
     font-size:78px;
-    color:@dark-color;
-    // text-shadow: 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,-1px 1px 0 #000;
+    color:white;
+    text-shadow: 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,-1px 1px 0 #000;
   }
   &__description {
-    font-family: @heading-font;
+    font-family: "Gilroy Light",arial,sans-serif;
     text-align: center;
     font-weight: 200;
     font-size:24px;
     margin:15px auto 0 auto;
-    color:@dark-color;
+    color:white;
   }
   &__button-wrapper {
     text-align: center;
@@ -49,28 +49,27 @@
   &__button {
     margin-left: 15px;
     display:inline-block;
-    font-family:@button-font;
+    font-family:"Roboto Condensed",arial,sans-serif;
     font-weight: 700;
     font-size:14px;
     color:white;
     padding:15px 30px;
-    background-color:@main-color;
+    background-color:#d78f31;
     text-transform: uppercase;
-    border-radius: @button-radius;
-    border:2px solid @main-color;
+    border-radius: 30px;
+    border:2px solid #d78f31;
     transition:all 0.2s;
     &:hover {
       background-color:transparent;
-      color:@main-color;
+      color:white;
     }
     &:last-child {
       padding:15px 45px;
-      border-color:@dark-color;
-      color:@dark-color;
+      border-color:#fff;
       background-color:transparent;
       &:hover {
-        background-color:@dark-color;
-        color:#fff;
+        background-color:#fff;
+        color:#545454;
       }
     }
   }
