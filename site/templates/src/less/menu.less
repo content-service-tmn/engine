@@ -3,11 +3,10 @@
   &__grid {
     display:flex;
     justify-content: space-between;
+    align-items: center;
   }
   &__logo {
-    display:inline-block;
-    width: 130px;
-    background-color:pink;
+
   }
   &__nav {
     flex-grow: 0;
@@ -19,15 +18,24 @@
   &__link {
     display:block;
     padding:10px 15px;
-    font-family: "Roboto Condensed",arial,sans-serif;
+    font-family: @main-font;
     font-size:14px;
-    color:white;
+    color:@dark-color;
     transition:all 0.2s;
     text-transform: uppercase;
     font-weight: 700;
     &:hover {
-      background-color:#d78f31;
+      background-color:@main-color;
       color:white;
     }
+  }
+}
+
+.logo {
+  display:inline-block;
+  max-width: 200px;
+  &__img {
+    display:block;
+    width:100%;
   }
 }
