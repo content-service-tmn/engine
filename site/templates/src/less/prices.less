@@ -4,12 +4,12 @@
     text-align: center;
     font-weight: 700;
     font-size:30px;
-    color:#c2a47e;
+    color:@main-color;
   }
   &__heading {
     text-align: center;
     margin-top:30px;
-    font-family: "Gilroy Extrabold",arial,sans-serif;
+    font-family: @heading-font;
     font-weight: 800;
     font-size:48px;
   }
@@ -54,12 +54,13 @@
     left:0;
     top:0;
     width:100%;
-    background-color:#f3f3f3;
+    background-color:@main-color;
   }
   &__heading {
     text-align: center;
-    font-family: "Gilroy Light",arial,sans-serif;
+    font-family: @heading-font;
     font-size:24px;
+    color:white;
   }
   &__img {
     max-width: 120px;
@@ -67,6 +68,9 @@
     border-radius: 50%;
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     background-color:white;
+    background-repeat: no-repeat;
+    background-size:70% 70%;
+    background-position: 50% 50%;
     &:before {
       content:"";
       display:block;
@@ -75,7 +79,7 @@
   }
   &__price {
     margin-top:30px;
-    font-family: "Gilroy ExtraBold",arial,sans-serif;
+    font-family: @heading-font;
     font-size:40px;
     text-align: center;
     &:after {
@@ -90,7 +94,7 @@
     font-weight: 200;
   }
   &__item {
-    padding:15px 20px;
+    padding:10px 20px;
     display:block;
     &:not(:last-child) {
       position:relative;
@@ -98,7 +102,7 @@
         content:"";
         position:absolute;
         height:1px;
-        background-color:#f3f3f3;
+        background-color:@light-color;
         bottom:0;
         left:0;
         right:0;
@@ -117,17 +121,17 @@
   }
   &__button {
     display:inline-block;
-    font-family:"Roboto Condensed",arial,sans-serif;
+    font-family:@button-font;
     font-weight: 700;
     font-size:14px;
-    color:#c2a47e;
+    color:@main-color;
     padding:15px 30px;
     text-transform: uppercase;
     border-radius: 30px;
-    border:2px solid #c2a47e;
+    border:2px solid @main-color;
     transition:all 0.2s;
     &:hover {
-      background-color:#c2a47e;
+      background-color:@main-color;
       color:white;
     }
   }

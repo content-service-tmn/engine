@@ -287,7 +287,7 @@
                 <div class="prices__cell">
                   <div class="prices__item prices-block">
                     <h3 class="prices-block__heading"><?= $item->prices_item_name ?></h3>
-                    <div class="prices-block__img"></div>
+                    <div class="prices-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
