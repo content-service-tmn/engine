@@ -1,4 +1,195 @@
 <?php namespace Processwire; ?>
+
+<section class="benefits">
+  <div class="container container_center">
+    <div class="benefits__header">
+      <h3 class="benefits__heading">Мы гордимся</h3>
+      <p class="benefits__description">
+        Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+      </p>
+      <div class="benefits__button-wrapper">
+        <a href="" class="benefits__button">получить консультацию</a>
+      </div>
+    </div>
+    <div class="benefits__wrapper">
+      <div class="benefits__grid">
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+        <div class="benefits__cell">
+          <div class="benefits__item benefits-block">
+            <div class="benefits-block__header">
+              <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+              <p class="benefits-block__heading">Название первое</p>
+            </div>
+            <p class="benefits-block__text">
+              Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slideset-section">
+  <div class="container container_center">
+    <div data-uk-slideset="{default: 2}">
+      <div class="uk-slidenav-position">
+        <ul class="slideset uk-slideset">
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
+        <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+      </div>
+      <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
+    </div>
+  </div>
+</section>
+<section class="slideshow-section">
+  <div class="container container_center">
+    <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
+      <ul class="slideshow uk-slideshow">
+          <li class="slideshow__cell">
+            <div class="slideshow__item">
+              <div class="slideshow__img"></div>
+              <div class="slideshow__panel">
+                <h3 class="slideshow__subheading">фотозона</h3>
+                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+                <p class="slideshow__description">детский сад</p>
+              </div>
+              <div class="slideshow__panel">
+                <div class="slideshow__button-wrapper">
+                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slideshow__cell">
+            <div class="slideshow__item">
+              <div class="slideshow__img"></div>
+              <div class="slideshow__panel">
+                <h3 class="slideshow__subheading">фотозона</h3>
+                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+                <p class="slideshow__description">детский сад</p>
+              </div>
+              <div class="slideshow__panel">
+                <div class="slideshow__button-wrapper">
+                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
+      <a href="" class="slideshow__nav nav nav_prev" data-uk-slideshow-item="previous"></a>
+      <a href="" class="slideshow__nav nav nav_next" data-uk-slideshow-item="next"></a>
+      <ul class="dotnav slideshow__dotnav uk-slideshow-nav uk-dotnav">
+        <li data-uk-slideshow-item="0"><a href=""></a></li>
+        <li data-uk-slideshow-item="1"><a href=""></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="more">
+  <h3 class="more__subheading">Добро пожаловать</h3>
+  <h2 class="more__heading">Мы гордимся нашими работами</h2>
+  <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
+  <form action="" class="form">
+    <div class="more__form">
+      <div class="more__element form__element">
+        <label class="form__label" for="more">узнать подробнее</label>
+        <input name="more" id="more" class="form__input"></input>
+      </div>
+      <div class="more__element form__submit submit">
+        <span class="submit__label">узнать подробнее</span>
+        <button class="submit__button"></button>
+      </div>
+    </div>
+  </form>
+</section>
+
 <section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -53,6 +244,45 @@
     </div>
   </div>
 </section>
+<section class="text-block">
+  <div class="container container_center">
+    <div class="text-block__grid">
+      <div class="text-block__cell">
+        <div class="text-block__img-wrapper">
+          <img src="https://www.fing.edu.uy/inco/grupos/gsi/img/placeholder.png" alt="" class="text-block__img">
+        </div>
+      </div>
+      <div class="text-block__cell">
+        <h3 class="text-block__heading">Заголовок этого пункта примерно так</h3>
+        <p class="text-block__text">
+          Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спинон видел, стоило ему.
+        </p>
+        <ul class="text-block__list">
+          <li class="text-block__item">
+            Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил,
+          </li>
+          <li class="text-block__item">
+            Что он у себя в постели превратился в страшное насекомое. Лежа на панцирнотвердой спинон видел, стоило ему.
+          </li>
+        </ul>
+        <p class="text-block__quote">Какая-то подпись</p>
+        <p class="text-block__name">Какая-то подпись</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="work">
+  <div class="container container_center">
+    <h3 class="work__subheading">Добро пожаловать</h3>
+    <h2 class="work__heading">Мы гордимся нашими работами</h2>
+    <p class="work__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
+    <div class="work__wrapper">
+      <div class="work__grid">
+        <div class="work__cell">
+          <div class="work__item work-block">
+            <div class="work-block__header">
+              <div class="work-block__img"></div>
+              <p class="work-block__heading">Название первое</p>
 <?php foreach ($page->blocks as $block): ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header">
@@ -60,7 +290,9 @@
         <div class="header__menu menu">
           <div class="container container_center">
             <div class="menu__grid">
-              <a href="" class="menu__logo"></a>
+              <a href="" class="menu__logo logo">
+                <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+              </a>
               <ul class="menu__nav">
                   <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav!= "" && $item->anchorForNav != ""):  ?>
                     <li class="menu__item"><a href="#<?=$item->anchorForNav?>" class="menu__link"><?=$item->nameForNav?></a></li>
@@ -197,4 +429,3 @@
     </section>
     <?php endif; ?>
 <?php endforeach; ?>
-
