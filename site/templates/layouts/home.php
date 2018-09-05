@@ -163,7 +163,7 @@
 <section class="price" style="background-image:url(http://www.toca-ch.com/data/walls/131/26395607.jpg)">
   <div class="container container_center">
     <div class="price__panel">
-      <h3 class="price__heading">Цена альбома</h3>
+      <h3 class="price__heading">Цены альбомов</h3>
       <ul class="price__list">
         <li class="price__item">Планшет <span>1100 руб.</span></li>
         <li class="price__item">Трио <span>1100 руб.</span></li>
@@ -173,6 +173,77 @@
         <li class="price__item">Книга 20х25 <span>1100 руб.</span></li>
         <li class="price__item">Фотокнига Люкс (36 стр.) <span>1100 руб.</span></li>
       </ul>
+    </div>
+  </div>
+</section>
+<section class="footer">
+  <div class="footer__cell">
+    <div class="footer__panel">
+      <h3 class="footer__heading">Контакты</h3>
+      <p class="footer__address">г. Тюмень, ул. Пушкина, дом Колотушкина</p>
+      <ul class="footer__list">
+        <li class="footer__item"><a href="" class="footer__link footer__link_phone">+7 999 999-99-99</a></li>
+        <li class="footer__item"><a href="" class="footer__link footer__link_phone">+7 999 999-99-99</a></li>
+        <li class="footer__item"><a href="" class="footer__link footer__link_mail">mail@mail.mail</a></li>
+      </ul>
+      <div class="footer__socials-wrapper">
+        <div class="footer__socials">
+          <a href="" class="footer__social footer__social_vk"></a>
+          <a href="" class="footer__social footer__social_inst"></a>
+          <a href="" class="footer__social footer__social_whatsapp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__cell">
+    <div id="google-map" class="footer__map">
+
+    </div>
+  </div>
+</section>
+<section class="scheme">
+  <div class="container container_center">
+    <div class="scheme__grid">
+      <div class="scheme__cell">
+        <div class="scheme-block">
+          <p class="scheme-block__heading">заголовок</p>
+          <h3 class="scheme-block__description">описание</h3>
+          <h3 class="scheme-block__salary">цена</h3>
+        </div>
+        <div class="scheme-block">
+          <p class="scheme-block__heading">заголовок</p>
+          <h3 class="scheme-block__description">описание</h3>
+          <h3 class="scheme-block__salary">цена</h3>
+        </div>
+        <a href="#callback" class="scheme__button">присоединиться</a>
+      </div>
+      <div class="scheme__cell">
+        <div class="scheme__circle">
+          <div class="scheme__line scheme__line_left"></div>
+        </div>
+        <div class="scheme__circle"></div>
+        <div class="scheme__circle"></div>
+        <div class="scheme__circle"></div>
+        <div class="scheme__circle"></div>
+        <div class="scheme__circle">
+          <div class="scheme__line scheme__line_right"></div>
+        </div>
+      </div>
+      <div class="scheme__cell">
+        <div class="scheme-block">
+          <p class="scheme-block__heading">Заголовок</p>
+          <h3 class="scheme-block__description">Заголовок</h3>
+          <h3 class="scheme-block__salary">Прайс</h3>
+        </div>
+        <div class="scheme-block">
+          <p class="scheme-block__heading">Заголовок</p>
+          <h3 class="scheme-block__description">Описание</h3>
+          <h3 class="scheme-block__salary">Прайс</h3>
+        </div>
+        <p class="scheme__plan">
+          План кого чего кого чего кого чего кого чего
+        </p>
+      </div>
     </div>
   </div>
 </section>

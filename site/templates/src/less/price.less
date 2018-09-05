@@ -7,7 +7,7 @@
   &__panel {
     box-sizing: border-box;
     max-width: 400px;
-    padding:60px 45px;
+    padding:45px 45px 60px 45px;
     background-color:white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     margin:0 auto;
@@ -19,13 +19,13 @@
     font-family: @heading-font;
   }
   &__list {
-    margin-top:30px;
+    margin-top:45px;
   }
   &__item {
     padding-right: 100px;
     position:relative;
     &:not(:last-child) {
-      margin-bottom:20px;
+      margin-bottom:30px;
       &:before {
         content:"";
         position:absolute;
@@ -33,7 +33,7 @@
         left:0;
         right:0;
         bottom:0;
-        transform:translateY(10px);
+        transform:translateY(15px);
         background-color:@light-color;
       }
     }
