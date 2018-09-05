@@ -1,5 +1,7 @@
 <?php namespace Processwire; ?>
 
+<a href="#callback" data-uk-offcanvas="{mode:'slide'}">callback</a>
+<a href="#sidebar" data-uk-offcanvas="{mode:'slide'}">sidebar</a>
 <section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -97,52 +99,42 @@
     </div>
   </div>
 </section>
+
 <section class="scheme">
   <div class="container container_center">
     <div class="scheme__grid">
       <div class="scheme__cell">
         <div class="scheme-block">
-          <p class="scheme-block__heading">заголовок</p>
-          <h3 class="scheme-block__description">описание</h3>
-          <h3 class="scheme-block__salary">цена</h3>
-        </div>
-        <div class="scheme-block">
-          <p class="scheme-block__heading">заголовок</p>
-          <h3 class="scheme-block__description">описание</h3>
-          <h3 class="scheme-block__salary">цена</h3>
-        </div>
-        <a href="#callback" class="scheme__button">присоединиться</a>
-      </div>
-      <div class="scheme__cell">
-        <div class="scheme__circle">
-          <div class="scheme__line scheme__line_left"></div>
-        </div>
-        <div class="scheme__circle"></div>
-        <div class="scheme__circle"></div>
-        <div class="scheme__circle"></div>
-        <div class="scheme__circle"></div>
-        <div class="scheme__circle">
-          <div class="scheme__line scheme__line_right"></div>
+          <div class="scheme-block__img"></div>
+          <h3 class="scheme-block__heading">Выездная сборка</h3>
+          <p class="scheme-block__text">декораций в учебном заведении</p>
         </div>
       </div>
       <div class="scheme__cell">
         <div class="scheme-block">
-          <p class="scheme-block__heading">Заголовок</p>
-          <h3 class="scheme-block__description">Заголовок</h3>
-          <h3 class="scheme-block__salary">Прайс</h3>
+          <div class="scheme-block__img"></div>
+          <h3 class="scheme-block__heading">Выездная сборка</h3>
+          <p class="scheme-block__text">декораций в учебном заведении</p>
         </div>
+      </div>
+      <div class="scheme__cell">
         <div class="scheme-block">
-          <p class="scheme-block__heading">Заголовок</p>
-          <h3 class="scheme-block__description">Описание</h3>
-          <h3 class="scheme-block__salary">Прайс</h3>
+          <div class="scheme-block__img"></div>
+          <h3 class="scheme-block__heading">Выездная сборка</h3>
+          <p class="scheme-block__text">декораций в учебном заведении</p>
         </div>
-        <p class="scheme__plan">
-          План кого чего кого чего кого чего кого чего
-        </p>
+      </div>
+      <div class="scheme__cell">
+        <div class="scheme-block">
+          <div class="scheme-block__img"></div>
+          <h3 class="scheme-block__heading">Выездная сборка</h3>
+          <p class="scheme-block__text">декораций в учебном заведении</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <?php foreach ($page->blocks as $block): ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header" style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
