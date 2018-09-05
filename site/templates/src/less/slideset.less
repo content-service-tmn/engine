@@ -1,0 +1,121 @@
+.slideset {
+  margin-left: -30px;
+  display:flex;
+  justify-content: center;
+  &__cell {
+    padding-left: 30px;
+  }
+  &__item {
+    background-color:white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  &__img {
+    padding-top:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color:#545454;
+  }
+  &__panel {
+    padding:30px;
+  }
+  &__subheading {
+    color:#69b53d;
+    font-size:12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: "Open Sans",arial,sans-serif;
+  }
+  &__heading {
+    margin-top:15px;
+    font-size:30px;
+    font-weight: 800;
+    font-family: "Open Sans",arial,sans-serif;
+  }
+  &__description {
+    margin-top:15px;
+    font-size:12px;
+    color:#797979;
+    font-weight: 600;
+    font-family: "Open Sans",arial,sans-serif;
+    text-transform: uppercase;
+  }
+  &__nav {
+    position:absolute;
+    top:50%;
+    height:80px;
+    width:60px;
+    &:before {
+      content:"";
+      position:absolute;
+      border-top:10px solid #69b53d;
+      border-left:10px solid #69b53d;
+      width:50px;
+      height:50px;
+      top:50%;
+      left:50%;
+    }
+    &_prev {
+      left:0;
+      transform:translate(-100%,-50%) translateX(-60px);
+      &:before {
+        transform:translate(-50%,-50%) rotate(-45deg);
+      }
+    }
+    &_next {
+      right:0;
+      transform:translate(100%,-50%) translateX(60px);
+      &:before {
+        transform:translate(-50%,-50%) rotate(135deg);
+      }
+    }
+  }
+}
+
+.dotnav {
+  margin:0;
+  margin-top:40px;
+  li {
+    margin:0;
+    padding:0;
+    a {
+      background-color:transparent;
+      width:40px;
+      height:40px;
+      position:relative;
+      &:before,&:after {
+        content:"";
+        position:absolute;
+        top:50%;
+        left:50%;
+        border-radius: 50%;
+        transform:translate(-50%,-50%);
+      }
+      &:before {
+        width:6px;
+        height:6px;
+        background-color:#69b53d;
+      }
+      &:after {
+        width:0;
+        height:0;
+        border:2px solid #69b53d;
+        transition:all 0.3s;
+      }
+    }
+    &:hover a,&:active a,&:focus a {
+      background-color:transparent;
+      &:after {
+        width:18px;
+        height:18px;
+      }
+    }
+    &.uk-active a {
+      background-color:transparent;
+      &:after {
+        width:18px;
+        height:18px;
+      }
+    }
+  }
+}

@@ -3,10 +3,33 @@
     position:relative;
   }
   &__label {
-    
+    position:absolute;
+    font-family:"Roboto Condensed",arial,sans-serif;
+    font-weight: 700;
+    font-size:14px;
+    color:white;
+    top:50%;
+    left:32px;
+    text-transform: uppercase;
+    transition:all 0.2s;
+    transform:translateY(-50%);
   }
   &__input {
-
+    display:inline-block;
+    font-family:"Roboto Condensed",arial,sans-serif;
+    font-weight: 700;
+    font-size:14px;
+    color:white;
+    padding:15px 30px;
+    background-color:#585858;
+    text-transform: uppercase;
+    border-radius: 30px;
+    border:2px solid #585858;
+    transition:all 0.2s;
+    width:320px;
+    &:focus {
+      outline:none;
+    }
   }
 }
 

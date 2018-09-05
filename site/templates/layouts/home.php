@@ -1,3 +1,64 @@
+<section style="padding:120px 0">
+  <div class="container container_center">
+    <div data-uk-slideset="{default: 2}">
+      <div class="uk-slidenav-position">
+        <ul class="slideset uk-slideset">
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+          <li class="slideset__cell">
+            <div class="slideset__item">
+              <div class="slideset__img"></div>
+              <div class="slideset__panel">
+                <h3 class="slideset__subheading">фотозона</h3>
+                <h2 class="slideset__heading">В гостях у фиксиков</h2>
+                <p class="slideset__description">детский сад</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a href="" class="slideset__nav slideset__nav_prev" data-uk-slideset-item="previous"></a>
+        <a href="" class="slideset__nav slideset__nav_next" data-uk-slideset-item="next"></a>
+      </div>
+      <ul class="dotnav uk-slideset-nav uk-dotnav uk-flex-center"></ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0">
+  <div class="container container_center">
+    <div class="uk-slidenav-position" data-uk-slideshow>
+      <ul class="uk-slideshow">
+          <li></li>
+          <li></li>
+      </ul>
+      <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+      <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+      <ul class="dotnav uk-slideset-nav uk-dotnav uk-flex-center">
+          <li data-uk-slideshow-item="0"><a href=""></a></li>
+          <li data-uk-slideshow-item="1"><a href=""></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="more">
   <h3 class="more__subheading">Добро пожаловать</h3>
   <h2 class="more__heading">Мы гордимся нашими работами</h2>
@@ -5,8 +66,8 @@
   <form action="" class="form">
     <div class="more__form">
       <div class="more__element form__element">
-        <span class="form__label">узнать подробнее</span>
-        <input class="form__input"></input>
+        <label class="form__label" for="more">узнать подробнее</label>
+        <input name="more" id="more" class="form__input"></input>
       </div>
       <div class="more__element form__submit submit">
         <span class="submit__label">узнать подробнее</span>
