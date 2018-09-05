@@ -1,7 +1,4 @@
 .form {
-  &__element {
-    position:relative;
-  }
   &__label {
     position:absolute;
     font-family:@button-font;
@@ -31,6 +28,13 @@
     line-height: 18px;
     &:focus {
       outline:none;
+    }
+  }
+  &__element {
+    position:relative;
+    &_name,&_phone {
+      border-color:@dark-color;
+      background-color:@light-color;
     }
   }
 }

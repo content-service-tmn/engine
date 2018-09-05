@@ -20,17 +20,17 @@
         <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
       </a>
       <form id="callback__form" class="form sidebar__form" action="/" method="post">
-        <div class="form__element">
+        <div class="form__element form__element_name">
           <label class="form__label" for="more">Имя</label>
           <input name="more" id="more" class="form__input"></input>
-        </div>
-        <div class="more__element form__submit submit">
-          <span class="submit__label">узнать подробнее</span>
-          <button class="submit__button"></button>
         </div>
         <div class="form__element form__element_phone">
           <label class="label" for="phone">Телефон</label>
           <input id="phone" class="input js-input js-phone" type="text" name="phone" value="">
+        </div>
+        <div class="submit">
+          <span class="submit__label">узнать подробнее</span>
+          <button class="submit__button"></button>
         </div>
         <p class="form__text">Нажимая кнопку отправить, Вы соглашаетесь с <a href="/privacy">политикой обработки персональных данных</a></p>
         <div class="form__element form__element_send">
