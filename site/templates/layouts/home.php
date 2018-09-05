@@ -47,36 +47,36 @@
   <div class="container container_center">
     <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
       <ul class="slideshow uk-slideshow">
-          <li class="slideshow__cell">
-            <div class="slideshow__item">
-              <div class="slideshow__img"></div>
-              <div class="slideshow__panel">
-                <h3 class="slideshow__subheading">фотозона</h3>
-                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
-                <p class="slideshow__description">детский сад</p>
-              </div>
-              <div class="slideshow__panel">
-                <div class="slideshow__button-wrapper">
-                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
-                </div>
+        <li class="slideshow__cell">
+          <div class="slideshow__item">
+            <div class="slideshow__img"></div>
+            <div class="slideshow__panel">
+              <h3 class="slideshow__subheading">фотозона</h3>
+              <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+              <p class="slideshow__description">детский сад</p>
+            </div>
+            <div class="slideshow__panel">
+              <div class="slideshow__button-wrapper">
+                <a href="" class="slideshow__button">Посмотреть все страницы</a>
               </div>
             </div>
-          </li>
-          <li class="slideshow__cell">
-            <div class="slideshow__item">
-              <div class="slideshow__img"></div>
-              <div class="slideshow__panel">
-                <h3 class="slideshow__subheading">фотозона</h3>
-                <h2 class="slideshow__heading">В гостях у фиксиков</h2>
-                <p class="slideshow__description">детский сад</p>
-              </div>
-              <div class="slideshow__panel">
-                <div class="slideshow__button-wrapper">
-                  <a href="" class="slideshow__button">Посмотреть все страницы</a>
-                </div>
+          </div>
+        </li>
+        <li class="slideshow__cell">
+          <div class="slideshow__item">
+            <div class="slideshow__img"></div>
+            <div class="slideshow__panel">
+              <h3 class="slideshow__subheading">фотозона</h3>
+              <h2 class="slideshow__heading">В гостях у фиксиков</h2>
+              <p class="slideshow__description">детский сад</p>
+            </div>
+            <div class="slideshow__panel">
+              <div class="slideshow__button-wrapper">
+                <a href="" class="slideshow__button">Посмотреть все страницы</a>
               </div>
             </div>
-          </li>
+          </div>
+        </li>
       </ul>
       <a href="" class="slideshow__nav nav nav_prev" data-uk-slideshow-item="previous"></a>
       <a href="" class="slideshow__nav nav nav_next" data-uk-slideshow-item="next"></a>
@@ -88,23 +88,6 @@
   </div>
 </section>
 
-<section class="more">
-  <h3 class="more__subheading">Добро пожаловать</h3>
-  <h2 class="more__heading">Мы гордимся нашими работами</h2>
-  <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
-  <form action="" class="form">
-    <div class="more__form">
-      <div class="more__element form__element">
-        <label class="form__label" for="more">узнать подробнее</label>
-        <input name="more" id="more" class="form__input"></input>
-      </div>
-      <div class="more__element form__submit submit">
-        <span class="submit__label">узнать подробнее</span>
-        <button class="submit__button"></button>
-      </div>
-    </div>
-  </form>
-</section>
 
 <section class="news">
   <div class="container container_center">
@@ -171,8 +154,9 @@
                 <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
               </a>
               <ul class="menu__nav">
-                  <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav!= "" && $item->anchorForNav != ""):  ?>
-                    <li class="menu__item"><a href="#<?=$item->anchorForNav?>" class="menu__link"><?=$item->nameForNav?></a></li>
+                  <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+                    <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+                                              class="menu__link"><?= $item->nameForNav ?></a></li>
                   <?php endif; endforeach; ?>
               </ul>
             </div>
@@ -303,6 +287,26 @@
           </div>
         </div>
       </div>
+    </section>
+    <?php endif; ?>
+    <?php if ($block->repeater_matrix_type == 8): ?>
+    <section class="more">
+      <h3 class="more__subheading"><?=$block->inputBlock_header?></h3>
+      <h2 class="more__heading"><?=$block->inputBlock_title?></h2>
+      <p class="more__description"><?=$block->inputBlock_subtitle?></p>
+      <form action="" class="form">
+        <div class="more__form">
+          <div class="more__element form__element">
+            <?php bd($block->inputBlock_inputType); ?>
+            <label class="form__label" for="more">узнать подробнее</label>
+            <input name="more" id="more" class="form__input"></input>
+          </div>
+          <div class="more__element form__submit submit">
+            <span class="submit__label">узнать подробнее</span>
+            <button class="submit__button"></button>
+          </div>
+        </div>
+      </form>
     </section>
     <?php endif; ?>
 <?php endforeach; ?>
