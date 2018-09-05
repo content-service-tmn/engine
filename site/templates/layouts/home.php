@@ -130,7 +130,7 @@
                 <div class="benefits__cell">
                   <div class="benefits__item benefits-block">
                     <div class="benefits-block__header">
-                      <div class="benefits-block__img"></div>
+                      <div class="benefits-block__img" style="background: url(<?= $item->benefits_item_icon->url ?>)"></div>
                       <p class="benefits-block__heading"><?= $item->benefits_item_header ?></p>
                     </div>
                     <p class="benefits-block__text">
