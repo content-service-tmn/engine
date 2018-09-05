@@ -4,29 +4,31 @@
   }
   &__label {
     position:absolute;
-    font-family:"Roboto Condensed",arial,sans-serif;
+    font-family:@button-font;
     font-weight: 700;
     font-size:14px;
-    color:white;
+    color:@dark-color;
     top:50%;
     left:32px;
     text-transform: uppercase;
     transition:all 0.2s;
     transform:translateY(-50%);
+    line-height: 18px;
   }
   &__input {
     display:inline-block;
-    font-family:"Roboto Condensed",arial,sans-serif;
+    font-family:@button-font;
     font-weight: 700;
     font-size:14px;
-    color:white;
+    color:@dark-color;
     padding:15px 30px;
-    background-color:#585858;
+    background-color:@light-color;
     text-transform: uppercase;
-    border-radius: 30px;
-    border:2px solid #585858;
+    border-radius: @button-radius;
+    border:2px solid @light-color;
     transition:all 0.2s;
     width:320px;
+    line-height: 18px;
     &:focus {
       outline:none;
     }
@@ -38,20 +40,20 @@
   display:inline-block;
   &__label {
     display:inline-block;
-    font-family:"Roboto Condensed",arial,sans-serif;
+    font-family:@button-font;
     font-weight: 700;
     font-size:14px;
-    color:white;
+    color:#fff;
     padding:15px 30px;
-    background-color:#d78f31;
+    background-color:@main-color;
     text-transform: uppercase;
-    border-radius: 30px;
-    border:2px solid #d78f31;
+    border-radius: @button-radius;
+    border:2px solid @main-color;
     transition:all 0.2s;
   }
   &:hover &__label {
     background-color:transparent;
-    color:#d78f31;
+    color:@main-color;
   }
   &__button {
     z-index:1;

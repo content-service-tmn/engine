@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<section class="more">
+<section class="more" style="background-image:url(http://www.toca-ch.com/data/walls/131/26395607.jpg)">
   <h3 class="more__subheading">Добро пожаловать</h3>
   <h2 class="more__heading">Мы гордимся нашими работами</h2>
   <p class="more__description">Проснувшись однажды утром после беспокойного сна, Грегор Замза обнаружил, что он у себя в постели превратился.</p>
@@ -157,6 +157,22 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<section class="price" style="background-image:url(http://www.toca-ch.com/data/walls/131/26395607.jpg)">
+  <div class="container container_center">
+    <div class="price__panel">
+      <h3 class="price__heading">Цена альбома</h3>
+      <ul class="price__list">
+        <li class="price__item">Планшет <span>1100 руб.</span></li>
+        <li class="price__item">Трио <span>1100 руб.</span></li>
+        <li class="price__item">Трюмо <span>1100 руб.</span></li>
+        <li class="price__item">Книга 20х20 <span>1100 руб.</span></li>
+        <li class="price__item">Книга 20х28 <span>1100 руб.</span></li>
+        <li class="price__item">Книга 20х25 <span>1100 руб.</span></li>
+        <li class="price__item">Фотокнига Люкс (36 стр.) <span>1100 руб.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -235,7 +251,7 @@
                 <div class="benefits__cell">
                   <div class="benefits__item benefits-block">
                     <div class="benefits-block__header">
-                      <div class="benefits-block__img"></div>
+                      <div class="benefits-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
                       <p class="benefits-block__heading"><?= $item->benefits_item_header ?></p>
                     </div>
                     <p class="benefits-block__text">
