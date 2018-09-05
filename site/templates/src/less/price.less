@@ -4,6 +4,20 @@
   background-size:cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  position:relative;
+  &:after {
+    position:absolute;
+    content:"";
+    // background-color:rgba(0,0,0,0.5);
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+  }
+  &__wrapper {
+    position:relative;
+    z-index:1;
+  }
   &__panel {
     box-sizing: border-box;
     max-width: 400px;

@@ -20,13 +20,26 @@
     padding:10px 15px;
     font-family: @main-font;
     font-size:14px;
-    color:@dark-color;
-    transition:all 0.2s;
+    color:#fff;
     text-transform: uppercase;
     font-weight: 700;
-    &:hover {
+    position: relative;
+    &:after {
+      content:"";
+      position:absolute;
+      height:3px;
       background-color:@main-color;
-      color:white;
+      left:50%;
+      right:50%;
+      bottom:0;
+      transition:all 0.5s;
+    }
+    &:hover {
+      color:#fff;
+      &:after {
+        left:0;
+        right:0;
+      }
     }
   }
 }

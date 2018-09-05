@@ -1,6 +1,24 @@
 .header {
   background-color:transparent;
+  background-position: 50% 50%;
+  background-repeat:no-repeat;
+  background-size: cover;
   height:100vh;
+  position:relative;
+  &:before {
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5);
+  }
+  &__wrapper {
+    position:relative;
+    z-index: 1;
+    height:100%;
+  }
   &__grid {
     display:flex;
     flex-direction: column;
@@ -20,7 +38,7 @@
     text-align: center;
     font-weight: 700;
     font-size:30px;
-    color:@dark-color;
+    color:#fff;
   }
   &__heading {
     margin-top:30px;
@@ -28,7 +46,7 @@
     font-family: @heading-font;
     font-weight: 800;
     font-size:78px;
-    color:@dark-color;
+    color:#fff;
     // text-shadow: 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,-1px 1px 0 #000;
   }
   &__description {
@@ -37,7 +55,7 @@
     font-weight: 200;
     font-size:24px;
     margin:15px auto 0 auto;
-    color:@dark-color;
+    color:#fff;
   }
   &__button-wrapper {
     text-align: center;
@@ -61,16 +79,16 @@
     transition:all 0.2s;
     &:hover {
       background-color:transparent;
-      color:@main-color;
+      color:#fff;
     }
     &:last-child {
       padding:15px 45px;
-      border-color:@dark-color;
-      color:@dark-color;
+      border-color:#fff;
+      color:#fff;
       background-color:transparent;
       &:hover {
-        background-color:@dark-color;
-        color:#fff;
+        background-color:#fff;
+        color:@dark-color;
       }
     }
   }
