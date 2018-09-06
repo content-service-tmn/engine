@@ -30,3 +30,4 @@
 [2018-09-06 08-34-06] PHP Warning: A non-numeric value encountered in /home/c/cw40247/template_engine/public_html/site/assets/cache/FileCompiler/site/modules/AllInOneMinify/AllInOneMinify.module:713  @  http://engine.cw40247.tmweb.ru/ 
 [2018-09-06 08-35-46] PHP Warning: Invalid argument supplied for foreach() in /home/c/cw40247/template_engine/public_html/site/templates/layouts/home.php:356  @  http://engine.cw40247.tmweb.ru/ 
 [2018-09-06 08-35-46] PHP Warning: A non-numeric value encountered in /home/c/cw40247/template_engine/public_html/site/assets/cache/FileCompiler/site/modules/AllInOneMinify/AllInOneMinify.module:713  @  http://engine.cw40247.tmweb.ru/ 
+[2018-09-06 11-06-51] syntax error, unexpected end of file on line: 10 in Tracy Console Panel  @  http://engine.cw40247.tmweb.ru/ 
