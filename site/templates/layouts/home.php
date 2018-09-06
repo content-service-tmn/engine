@@ -1,8 +1,6 @@
 <?php namespace Processwire; ?>
 
 
-<a href="#callback" data-uk-offcanvas="{mode:'slide'}">callback</a>
-<a href="#sidebar" data-uk-offcanvas="{mode:'slide'}">sidebar</a>
 <!--<section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -59,6 +57,24 @@
 </section>  -->
 
 <a href="" class="burger"></a>
+
+<section id="menu" class="menu__wrapper">
+  <div class="menu menu_contrast">
+    <div class="container container_center">
+      <div class="menu__grid">
+        <a href="" class="menu__logo logo">
+          <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+        </a>
+        <ul class="menu__nav">
+          <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+            <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+              class="menu__link menu__link_contrast"><?= $item->nameForNav ?></a></li>
+            <?php endif; endforeach; ?>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
 
 <?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
@@ -248,7 +264,8 @@
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
                     <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                      <a href="<?= $slide->slide_image->url ?>" class="slideshow__link" data-uk-lightbox></a>
+                      <a href="<?= $slide->slide_image->url ?>" class="slideshow__link" data-uk-lightbox="{group:'my-group'}"></a>
+                      <a href="https://pp.userapi.com/c850324/v850324648/1fcad/WW5c2UGgumU.jpg" data-uk-lightbox="{group:'my-group'}"></a>
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -290,7 +307,8 @@
                   <li class="slideset__cell">
                     <div class="slideset__item">
                       <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox></a>
+                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
+                        <a href="https://pp.userapi.com/c850324/v850324648/1fcad/WW5c2UGgumU.jpg" data-uk-lightbox="{group:'1'}"></a>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>

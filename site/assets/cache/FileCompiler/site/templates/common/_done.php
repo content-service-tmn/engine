@@ -65,6 +65,18 @@
 </div>
 
 <script>
+$(document).ready(function() {
+  $(window).scroll(function(){
+    if ($(this).scrollTop()>500) {
+      $('#menu').addClass('active');
+    }
+    else {
+      $('#menu').removeClass('active');
+    };
+  });
+});
+</script>
+<script>
     function initMap() {
       var coordinates= {lat: 57.169883, lng: 65.5453884},
           options = {

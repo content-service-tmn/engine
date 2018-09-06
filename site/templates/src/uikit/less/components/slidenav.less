@@ -32,22 +32,22 @@
 
 @slidenav-width:                                60px;
 @slidenav-height:                               @slidenav-width;
-@slidenav-color:                                rgba(50,50,50,0.4);
+@slidenav-color:                                @main-color;
 @slidenav-font-size:                            60px;
 @slidenav-line-height:                          @slidenav-height;
 @slidenav-previous-icon:                        "\f104";
 @slidenav-next-icon:                            "\f105";
 
-@slidenav-hover-color:                          rgba(50,50,50,0.7);
+@slidenav-hover-color:                          @main-color;
 
-@slidenav-active-color:                         rgba(50,50,50,0.9);
+@slidenav-active-color:                         @main-color;
 
 @slidenav-position-previous:                    20px;
 @slidenav-position-next:                        @slidenav-position-previous;
 
-@slidenav-contrast-color:                       rgba(255,255,255,0.5);
-@slidenav-contrast-hover-color:                 rgba(255,255,255,0.7);
-@slidenav-contrast-active-color:                rgba(255,255,255,0.9);
+@slidenav-contrast-color:                       @main-color;
+@slidenav-contrast-hover-color:                 @main-color;
+@slidenav-contrast-active-color:                @main-color;
 
 
 /* ========================================================================
@@ -131,6 +131,9 @@
 
 .uk-slidenav-position .uk-slidenav {
     display: none;
+    &.uk-hidden-touch {
+      display:inline-block !important;
+    }
     position: absolute;
     top: 50%;
     z-index: 1;
