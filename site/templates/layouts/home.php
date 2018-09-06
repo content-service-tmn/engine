@@ -87,8 +87,8 @@
               <h2 class="header__heading"><?= $block->header_title ?></h2>
               <p class="header__description"><?= $block->header_subtitle ?></p>
               <div class="header__button-wrapper">
-                <a href="" class="header__button">узнать подробнее</a>
-                <a href="" class="header__button">меню</a>
+                <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="header" class="header__button callform">узнать подробнее</a>
+                <a href="#sidebar" data-uk-offcanvas="{mode:'slide'}" class="header__button">меню</a>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@
               <?= $block->benefits_subtitle ?>
           </p>
           <div class="benefits__button-wrapper">
-            <a href="" class="benefits__button">получить консультацию</a>
+            <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить консультацию</a>
           </div>
         </div>
         <div class="benefits__wrapper">
@@ -181,7 +181,8 @@
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
-                      <a href="" class="prices-block__button">купить тариф</a>
+                      <a >callback</a>
+                      <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить тариф</a>
                     </div>
                   </div>
                 </div>
