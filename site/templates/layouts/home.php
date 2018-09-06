@@ -364,9 +364,10 @@
             <?php foreach ($block->scheme as $step): ?>
               <div class="scheme__cell">
                 <div class="scheme-block">
-                  <div class="scheme-block__img" style="background-image: url(<?=$step->scheme_item_icon->url?>)"></div>
-                  <h3 class="scheme-block__heading"><?=$step->scheme_item_title?></h3>
-                  <p class="scheme-block__text"><?=$step->scheme_item_description?></p>
+                  <div class="scheme-block__img"
+                       style="background-image: url(<?= $step->scheme_item_icon->url ?>)"></div>
+                  <h3 class="scheme-block__heading"><?= $step->scheme_item_title ?></h3>
+                  <p class="scheme-block__text"><?= $step->scheme_item_description ?></p>
                 </div>
               </div>
             <?php endforeach; ?>
@@ -375,30 +376,37 @@
     </section>
     <?php endif; ?>
 
+    <?php if ($block->repeater_matrix_type == 13): ?>
+    <section class="reviews">
+      <div class="container container_center">
+        <h3 class="reviews__subheading"><?= $block->feedbacks_header ?></h3>
+        <h2 class="reviews__heading"><?= $block->feedbacks_title ?></h2>
+        <div data-uk-slideset="{default: 2}">
+          <div class="uk-slidenav-position reviews__slideset">
+            <ul class="slideset uk-slideset">
+                <?php foreach ($block->feedbacks_items as $feedback): ?>
+                  <li class="slideset__cell">
+                    <div class="reviews__item">
+                      <div class="reviews__img"
+                           style="background-image:url(<?= $feedback->feedbacks_item_img->url ?>)"></div>
+                      <p class="reviews__text"><?= $feedback->feedbacks_item_content ?></p>
+                      <div class="reviews__author">
+                        <h2 class="reviews__name"><?= $feedback->feedbacks_item_name ?></h2>
+                        <h3 class="reviews__post"><?= $feedback->feedbacks_item_post ?></h3>
+                      </div>
+                    </div>
+                  </li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
+            <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+          </div>
+          <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
 <?php endforeach; ?>
 
-<section class="reviews">
-  <div class="container container_center">
-    <h3 class="reviews__subheading">Надзаголовок</h3>
-    <h2 class="reviews__heading">Заголовок</h2>
-    <div data-uk-slideset="{default: 2}">
-      <div class="uk-slidenav-position reviews__slideset">
-        <ul class="slideset uk-slideset">
-          <li class="slideset__cell">
-            <div class="reviews__item">
-              <div class="reviews__img" style="background-image:url(https://sun1-2.userapi.com/c543101/v543101963/45885/ohsQUxLbRJE.jpg)"></div>
-              <p class="reviews__text">Проснувшись однажды утром поокойного сна. Замза обнаружил.после беспось однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна. Замза обнаружил.после беспокойного сна.</p>
-              <div class="reviews__author">
-                <h2 class="reviews__name">Галя Иванова</h2>
-                <h3 class="reviews__post">Директор ООО</h3>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
-        <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
-      </div>
-      <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
-    </div>
-  </div>
-</section>
+
