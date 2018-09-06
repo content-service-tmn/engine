@@ -21,22 +21,18 @@
       </a>
       <form id="callback__form" class="form sidebar__form" action="/" method="post">
         <div class="form__element form__element_name">
-          <label class="form__label" for="more">Имя</label>
-          <input name="more" id="more" class="form__input"></input>
+          <label class="form__label" for="name">Имя</label>
+          <input name="name" id="name" class="form__input js-input js-name"></input>
         </div>
-        <div class="form__element form__element_phone">
-          <label class="label" for="phone">Телефон</label>
-          <input id="phone" class="input js-input js-phone" type="text" name="phone" value="">
+        <div class="form__element form__element_phone sidebar__element">
+          <label class="form__label" for="phone">Телефон</label>
+          <input name="phone" id="phone" class="form__input js-input js-phone" type="text" name="phone" value="">
         </div>
-        <div class="submit">
-          <span class="submit__label">узнать подробнее</span>
-          <button class="submit__button"></button>
-        </div>
-        <p class="form__text">Нажимая кнопку отправить, Вы соглашаетесь с <a href="/privacy">политикой обработки персональных данных</a></p>
-        <div class="form__element form__element_send">
-          <div class="send">
-            <span class="send__text">отправить</span>
-            <button id="submit_form" class="send__button" type="submit" name="submit" value="order"></button>
+        <p class="form__text sidebar__text">Нажимая кнопку отправить, Вы соглашаетесь с <a href="/privacy">политикой обработки персональных данных</a></p>
+        <div class="sidebar__button">
+          <div class="submit sidebar__submit">
+            <span class="submit__label">отправить</span>
+            <button class="submit__button"></button>
           </div>
         </div>
       </form>
