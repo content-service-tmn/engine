@@ -238,7 +238,7 @@
     </section>
     <?php endif; ?>
     <?php if ($block->repeater_matrix_type == 3): ?>
-    <section class="slideshow-section">
+    <section id="photoareas" class="slideshow-section">
       <div class="container container_center">
         <h3 class="slideset-section__subheading">Надзаголовок</h3>
         <h2 class="slideset-section__heading">Заголовок</h2>
@@ -279,7 +279,7 @@
 
 
     <?php if ($block->repeater_matrix_type == 9): ?>
-    <section class="slideset-section">
+    <section id="albums" class="slideset-section">
       <div class="container container_center">
         <h3 class="slideset-section__subheading">Надзаголовок</h3>
         <h2 class="slideset-section__heading">Заголовок</h2>
@@ -328,7 +328,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 11): ?>
-    <section class="footer">
+    <section id="contacts" class="footer">
       <div class="footer__cell">
         <div class="footer__panel">
           <h3 class="footer__heading">Контакты</h3>
@@ -358,7 +358,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 12): ?>
-    <section class="scheme">
+    <section id="scheme" class="scheme">
       <div class="container container_center">
         <div class="scheme__grid">
             <?php foreach ($block->scheme as $step): ?>
@@ -377,7 +377,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 13): ?>
-    <section class="reviews">
+    <section id="feedbacks" class="reviews">
       <div class="container container_center">
         <h3 class="reviews__subheading"><?= $block->feedbacks_header ?></h3>
         <h2 class="reviews__heading"><?= $block->feedbacks_title ?></h2>
