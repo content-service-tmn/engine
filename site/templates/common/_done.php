@@ -36,6 +36,11 @@
           </div>
         </div>
       </form>
+      <div class="sidebar__contacts">
+        <a href="" class="sidebar__contact sidebar__contact_phone">+7897871239</a>
+        <a href="" class="sidebar__contact sidebar__contact_phone">+7040942398</a>
+        <a href="" class="sidebar__contact ">mail@mail.mail</a>
+      </div>
     </div>
   </div>
 </div>

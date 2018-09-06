@@ -58,6 +58,8 @@
   </div>
 </section>  -->
 
+<a href="" class="burger"></a>
+
 <?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header"
@@ -246,6 +248,7 @@
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
                     <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                      <a href="<?= $slide->slide_image->url ?>" class="slideshow__link" data-uk-lightbox></a>
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -280,13 +283,15 @@
       <div class="container container_center">
         <h3 class="slideset-section__subheading">Надзаголовок</h3>
         <h2 class="slideset-section__heading">Заголовок</h2>
-        <div data-uk-slideset="{default: 2}">
+        <div data-uk-slideset="{default: 1,medium:2}">
           <div class="uk-slidenav-position slideset-section__slideset">
             <ul class="slideset uk-slideset">
                 <?php foreach ($block->slides as $slide): ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
-                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)"></div>
+                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox></a>
+                      </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
                         <h2 class="slideset__heading"><?= $slide->slide_title ?></h2>
