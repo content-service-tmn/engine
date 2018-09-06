@@ -264,7 +264,7 @@
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
-                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_images->first->url ?>)">
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
