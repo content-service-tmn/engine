@@ -1,8 +1,9 @@
 <?php namespace Processwire; ?>
 
+
 <a href="#callback" data-uk-offcanvas="{mode:'slide'}">callback</a>
 <a href="#sidebar" data-uk-offcanvas="{mode:'slide'}">sidebar</a>
-<section class="news">
+<!--<section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
     <h2 class="news__heading">Мы гордимся нашими работами</h2>
@@ -55,89 +56,12 @@
       </div>
     </div>
   </div>
-</section>
-<section class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
-  <div class="price__wrapper">
-    <div class="container container_center">
-      <div class="price__panel">
-        <h3 class="price__heading">Цены альбомов</h3>
-        <ul class="price__list">
-          <li class="price__item">Планшет <span>1100 руб.</span></li>
-          <li class="price__item">Трио <span>1100 руб.</span></li>
-          <li class="price__item">Трюмо <span>1100 руб.</span></li>
-          <li class="price__item">Книга 20х20 <span>1100 руб.</span></li>
-          <li class="price__item">Книга 20х28 <span>1100 руб.</span></li>
-          <li class="price__item">Книга 20х25 <span>1100 руб.</span></li>
-          <li class="price__item">Фотокнига Люкс (36 стр.) <span>1100 руб.</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="footer">
-  <div class="footer__cell">
-    <div class="footer__panel">
-      <h3 class="footer__heading">Контакты</h3>
-      <p class="footer__address">г. Тюмень, ул. Пушкина, дом Колотушкина</p>
-      <ul class="footer__list">
-        <li class="footer__item"><a href="" class="footer__link footer__link_phone">+7 999 999-99-99</a></li>
-        <li class="footer__item"><a href="" class="footer__link footer__link_phone">+7 999 999-99-99</a></li>
-        <li class="footer__item"><a href="" class="footer__link footer__link_mail">mail@mail.mail</a></li>
-      </ul>
-      <div class="footer__socials-wrapper">
-        <div class="footer__socials">
-          <a href="" class="footer__social footer__social_vk"></a>
-          <a href="" class="footer__social footer__social_inst"></a>
-          <a href="" class="footer__social footer__social_whatsapp"></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer__cell">
-    <div id="google-map" class="footer__map">
+</section>  -->
 
-    </div>
-  </div>
-</section>
-
-<section class="scheme">
-  <div class="container container_center">
-    <div class="scheme__grid">
-      <div class="scheme__cell">
-        <div class="scheme-block">
-          <div class="scheme-block__img"></div>
-          <h3 class="scheme-block__heading">Выездная сборка</h3>
-          <p class="scheme-block__text">декораций в учебном заведении</p>
-        </div>
-      </div>
-      <div class="scheme__cell">
-        <div class="scheme-block">
-          <div class="scheme-block__img"></div>
-          <h3 class="scheme-block__heading">Выездная сборка</h3>
-          <p class="scheme-block__text">декораций в учебном заведении</p>
-        </div>
-      </div>
-      <div class="scheme__cell">
-        <div class="scheme-block">
-          <div class="scheme-block__img"></div>
-          <h3 class="scheme-block__heading">Выездная сборка</h3>
-          <p class="scheme-block__text">декораций в учебном заведении</p>
-        </div>
-      </div>
-      <div class="scheme__cell">
-        <div class="scheme-block">
-          <div class="scheme-block__img"></div>
-          <h3 class="scheme-block__heading">Выездная сборка</h3>
-          <p class="scheme-block__text">декораций в учебном заведении</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<?php foreach ($page->blocks as $block): ?>
+<?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
-    <section id="header" class="header" style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
+    <section id="header" class="header"
+             style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
       <div class="header__wrapper">
         <div class="header__grid">
           <div class="header__menu menu">
@@ -147,26 +71,26 @@
                   <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
                 </a>
                 <ul class="menu__nav">
-                  <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
-                    <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-                      class="menu__link"><?= $item->nameForNav ?></a></li>
+                    <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+                      <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+                                                class="menu__link"><?= $item->nameForNav ?></a></li>
                     <?php endif; endforeach; ?>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="header__panel">
-              <div class="container container_center">
-                <h3 class="header__subheading"><?= $block->header_header ?></h3>
-                <h2 class="header__heading"><?= $block->header_title ?></h2>
-                <p class="header__description"><?= $block->header_subtitle ?></p>
-                <div class="header__button-wrapper">
-                  <a href="" class="header__button">узнать подробнее</a>
-                  <a href="" class="header__button">меню</a>
-                </div>
+                </ul>
               </div>
             </div>
           </div>
+          <div class="header__panel">
+            <div class="container container_center">
+              <h3 class="header__subheading"><?= $block->header_header ?></h3>
+              <h2 class="header__heading"><?= $block->header_title ?></h2>
+              <p class="header__description"><?= $block->header_subtitle ?></p>
+              <div class="header__button-wrapper">
+                <a href="" class="header__button">узнать подробнее</a>
+                <a href="" class="header__button">меню</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <?php endif; ?>
@@ -213,7 +137,8 @@
                 <div class="benefits__cell">
                   <div class="benefits__item benefits-block">
                     <div class="benefits-block__header">
-                      <div class="benefits-block__img" style="background-image: url(<?= $item->benefits_item_icon->url ?>)"></div>
+                      <div class="benefits-block__img"
+                           style="background-image: url(<?= $item->benefits_item_icon->url ?>)"></div>
                       <p class="benefits-block__heading"><?= $item->benefits_item_header ?></p>
                     </div>
                     <p class="benefits-block__text">
@@ -249,7 +174,8 @@
                 <div class="prices__cell">
                   <div class="prices__item prices-block">
                     <h3 class="prices-block__heading"><?= $item->prices_item_name ?></h3>
-                    <div class="prices-block__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+                    <div class="prices-block__img"
+                         style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
@@ -298,7 +224,7 @@
             <div class="more__element form__element">
               <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
               <input name="more" id="more" class="form__input"
-              data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
+                     data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
             </div>
             <div class="more__element form__submit submit">
               <span class="submit__label">узнать подробнее</span>
@@ -347,7 +273,7 @@
     <?php endif; ?>
 
 
-    <?php if ($block->repeater_matrix_type == 8): ?>
+    <?php if ($block->repeater_matrix_type == 9): ?>
     <section class="slideset-section">
       <div class="container container_center">
         <div data-uk-slideset="{default: 2}">
@@ -374,4 +300,70 @@
       </div>
     </section>
     <?php endif; ?>
+
+    <?php if ($block->repeater_matrix_type == 10): ?>
+    <section class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
+      <div class="price__wrapper">
+        <div class="container container_center">
+          <div class="price__panel">
+            <h3 class="price__heading"><?= $block->prices_title ?></h3>
+            <ul class="price__list">
+                <?php foreach ($block->prices_table as $row): ?>
+                  <li class="price__item"><?= $row->name ?><span><?= $row->price ?></span></li>
+                <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
+    <?php if ($block->repeater_matrix_type == 11): ?>
+    <section class="footer">
+      <div class="footer__cell">
+        <div class="footer__panel">
+          <h3 class="footer__heading">Контакты</h3>
+          <p class="footer__address"><?= $block->home_address ?></p>
+          <ul class="footer__list">
+              <?php foreach (explode(',', $block->home_phone) as $phone): ?>
+                <li class="footer__item"><a href="tel:<?= phoneLink($phone) ?>"
+                                            class="footer__link footer__link_phone"><?= $phone ?></a></li>
+              <?php endforeach; ?>
+            <li class="footer__item"><a href="" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
+          </ul>
+          <div class="footer__socials-wrapper">
+            <div class="footer__socials">
+              <a href="<?= $block->home_vkontakte ?>" target="_blank" class="footer__social footer__social_vk"></a>
+              <a href="<?= $block->home_instagram ?>" target="_blank" class="footer__social footer__social_inst"></a>
+              <a href="https://api.whatsapp.com/send?phone=<?= $block->home_whatsapp ?>" target="_blank"
+                 class="footer__social footer__social_whatsapp"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__cell">
+        <div id="google-map" class="footer__map">
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
+    <?php if ($block->repeater_matrix_type == 12): ?>
+    <section class="scheme">
+      <div class="container container_center">
+        <div class="scheme__grid">
+            <?php foreach ($block->scheme as $step): ?>
+              <div class="scheme__cell">
+                <div class="scheme-block">
+                  <div class="scheme-block__img" style="background: url(<?=$step->scheme_item_icon->url?>)"></div>
+                  <h3 class="scheme-block__heading"><?=$step->scheme_item_title?></h3>
+                  <p class="scheme-block__text"><?=$step->scheme_item_description?></p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
 <?php endforeach; ?>

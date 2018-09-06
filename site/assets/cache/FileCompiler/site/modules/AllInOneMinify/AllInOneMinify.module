@@ -704,7 +704,7 @@ class AllInOneMinify extends \ProcessWire\WireData implements \ProcessWire\Modul
         // ------------------------------------------------------------------------
         // Initialize timestamp variable.
         // ------------------------------------------------------------------------
-        $_timestamp = '';
+        $_timestamp = 0;
 
         // ------------------------------------------------------------------------
         // Calculate timestamp of all files
