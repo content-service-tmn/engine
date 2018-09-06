@@ -5,12 +5,12 @@
     font-weight: 700;
     font-size:14px;
     color:@dark-color;
-    top:50%;
+    top:17px;
     left:18px;
     text-transform: uppercase;
     transition:all 0.2s;
-    transform:translateY(-50%);
     line-height: 18px;
+    transition:all 0.3s;
   }
   &__input {
     display:inline-block;
@@ -18,7 +18,7 @@
     font-weight: 700;
     font-size:14px;
     color:@dark-color;
-    padding:15px 17px;
+    padding:18px 17px 6px 17px;
     background-color:#fff;
     text-transform: uppercase;
     border-radius: @button-radius;
@@ -26,6 +26,7 @@
     transition:all 0.2s;
     width:320px;
     line-height: 18px;
+    transition:all 0.3s;
     &:focus {
       outline:none;
     }
@@ -41,6 +42,14 @@
       background-color:@light-color;
       width:100%;
       box-sizing: border-box;
+    }
+    &.error input {
+      border-color:red;
+    }
+    &.is_filled label,&.is_focused label {
+      top:8px;
+      font-size:10px;
+      line-height: 12px;
     }
   }
 }
