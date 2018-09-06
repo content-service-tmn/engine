@@ -58,6 +58,8 @@
   </div>
 </section>  -->
 
+<a href="" class="burger"></a>
+
 <?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header"
@@ -238,12 +240,15 @@
     <?php if ($block->repeater_matrix_type == 3): ?>
     <section class="slideshow-section">
       <div class="container container_center">
+        <h3 class="slideset-section__subheading">Надзаголовок</h3>
+        <h2 class="slideset-section__heading">Заголовок</h2>
         <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
-          <ul class="slideshow uk-slideshow">
+          <ul class="slideshow uk-slideshow slideshow-section__slideshow">
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
                     <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                      <a href="<?= $slide->slide_image->url ?>" class="slideshow__link" data-uk-lightbox></a>
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -276,13 +281,17 @@
     <?php if ($block->repeater_matrix_type == 9): ?>
     <section class="slideset-section">
       <div class="container container_center">
-        <div data-uk-slideset="{default: 2}">
-          <div class="uk-slidenav-position">
+        <h3 class="slideset-section__subheading">Надзаголовок</h3>
+        <h2 class="slideset-section__heading">Заголовок</h2>
+        <div data-uk-slideset="{default: 1,medium:2}">
+          <div class="uk-slidenav-position slideset-section__slideset">
             <ul class="slideset uk-slideset">
                 <?php foreach ($block->slides as $slide): ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
-                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)"></div>
+                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox></a>
+                      </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
                         <h2 class="slideset__heading"><?= $slide->slide_title ?></h2>
@@ -355,7 +364,7 @@
             <?php foreach ($block->scheme as $step): ?>
               <div class="scheme__cell">
                 <div class="scheme-block">
-                  <div class="scheme-block__img" style="background: url(<?=$step->scheme_item_icon->url?>)"></div>
+                  <div class="scheme-block__img" style="background-image: url(<?=$step->scheme_item_icon->url?>)"></div>
                   <h3 class="scheme-block__heading"><?=$step->scheme_item_title?></h3>
                   <p class="scheme-block__text"><?=$step->scheme_item_description?></p>
                 </div>
@@ -367,3 +376,29 @@
     <?php endif; ?>
 
 <?php endforeach; ?>
+
+<section class="reviews">
+  <div class="container container_center">
+    <h3 class="reviews__subheading">Надзаголовок</h3>
+    <h2 class="reviews__heading">Заголовок</h2>
+    <div data-uk-slideset="{default: 2}">
+      <div class="uk-slidenav-position reviews__slideset">
+        <ul class="slideset uk-slideset">
+          <li class="slideset__cell">
+            <div class="reviews__item">
+              <div class="reviews__img" style="background-image:url(https://sun1-2.userapi.com/c543101/v543101963/45885/ohsQUxLbRJE.jpg)"></div>
+              <p class="reviews__text">Проснувшись однажды утром поокойного сна. Замза обнаружил.после беспось однажды утром после беспокойного сна, Грегор Замза обнаружил.после беспокойного сна. Замза обнаружил.после беспокойного сна.</p>
+              <div class="reviews__author">
+                <h2 class="reviews__name">Галя Иванова</h2>
+                <h3 class="reviews__post">Директор ООО</h3>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
+        <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+      </div>
+      <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
+    </div>
+  </div>
+</section>
