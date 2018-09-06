@@ -1,8 +1,6 @@
 <?php namespace Processwire; ?>
 
 
-<a href="#callback" data-uk-offcanvas="{mode:'slide'}">callback</a>
-<a href="#sidebar" data-uk-offcanvas="{mode:'slide'}">sidebar</a>
 <!--<section class="news">
   <div class="container container_center">
     <h3 class="news__subheading">Добро пожаловать</h3>
@@ -59,6 +57,24 @@
 </section>  -->
 
 <a href="" class="burger"></a>
+
+<section id="menu" class="menu__wrapper">
+  <div class="menu menu_contrast">
+    <div class="container container_center">
+      <div class="menu__grid">
+        <a href="" class="menu__logo logo">
+          <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+        </a>
+        <ul class="menu__nav">
+          <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+            <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+              class="menu__link menu__link_contrast"><?= $item->nameForNav ?></a></li>
+            <?php endif; endforeach; ?>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
 
 <?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
@@ -226,7 +242,7 @@
           <div class="more__form">
             <div class="more__element form__element">
               <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
-              <input name="more" id="more" class="form__input"
+              <input name="more" id="more" class="form__input js-input"
                      data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
             </div>
             <div class="more__element form__submit submit">
@@ -239,17 +255,16 @@
     </section>
     <?php endif; ?>
     <?php if ($block->repeater_matrix_type == 3): ?>
-    <section class="slideshow-section">
+    <section class="slideshow-section" style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
-        <h3 class="slideset-section__subheading">Надзаголовок</h3>
-        <h2 class="slideset-section__heading">Заголовок</h2>
+        <h3 class="slideshow-section__subheading">Надзаголовок</h3>
+        <h2 class="slideshow-section__heading">Заголовок</h2>
         <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
           <ul class="slideshow uk-slideshow slideshow-section__slideshow">
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
                     <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                      <a href="<?= $slide->slide_image->url ?>" class="slideshow__link" data-uk-lightbox></a>
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -258,7 +273,8 @@
                     </div>
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
-                        <a href="" class="slideshow__button">Посмотреть все страницы</a>
+                        <a href="<?= $slide->slide_image->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
+                        <a href="<?= $slide->slide_image->url ?>" data-uk-lightbox="{group:'mygroup'}"></a>
                       </div>
                     </div>
                   </div>
@@ -280,7 +296,7 @@
 
 
     <?php if ($block->repeater_matrix_type == 9): ?>
-    <section class="slideset-section">
+    <section class="slideset-section" style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
         <h3 class="slideset-section__subheading">Надзаголовок</h3>
         <h2 class="slideset-section__heading">Заголовок</h2>
@@ -291,7 +307,8 @@
                   <li class="slideset__cell">
                     <div class="slideset__item">
                       <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox></a>
+                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
+                        <a href="https://pp.userapi.com/c850324/v850324648/1fcad/WW5c2UGgumU.jpg" data-uk-lightbox="{group:'1'}"></a>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
@@ -378,7 +395,7 @@
 
 <?php endforeach; ?>
 
-<section class="reviews">
+<section class="reviews"style=" background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
   <div class="container container_center">
     <h3 class="reviews__subheading">Надзаголовок</h3>
     <h2 class="reviews__heading">Заголовок</h2>
