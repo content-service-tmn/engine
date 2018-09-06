@@ -1,5 +1,26 @@
 .menu {
   padding:15px 0;
+  &_contrast {
+    background-color:white;
+    transition:all 0.5s;
+    transform:translateY(-100%);
+  }
+  &__wrapper {
+    transition:all 0.5s;
+    height:0;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    &.active {
+      height:68px;
+    }
+    &.active>* {
+      transform:translateY(0);
+    }
+  }
   &__grid {
     display:flex;
     justify-content: space-between;
@@ -39,6 +60,12 @@
       &:after {
         left:0;
         right:0;
+      }
+    }
+    &_contrast {
+      color:@dark-color;
+      &:hover {
+        color:@dark-color;
       }
     }
   }
