@@ -427,3 +427,24 @@
 
 <?php endforeach; ?>
 
+<section class="checks">
+  <div class="container container_center">
+    <div class="checks__grid">
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Фотосъемка в интерьере фотозоны	</p>
+        </div>
+      </div>
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Ретушь профессионального дизайнера	</p>
+        </div>
+      </div>
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Готовый дизайн проект альбома</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
