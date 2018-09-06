@@ -1,0 +1,90 @@
+.footer {
+  display:flex;
+  flex-wrap: wrap;
+  &__cell {
+    box-sizing: border-box;
+    width:50%;
+  }
+  &__panel {
+    padding:60px;
+    background-color:@light-color;
+    text-align: center;
+  }
+  &__heading {
+    font-family: @heading-font;
+    font-weight: 800;
+    font-size:48px;
+  }
+  &__address {
+    max-width: 380px;
+    margin:30px auto 0 auto;
+  }
+  &__list {
+    margin-top:15px;
+  }
+  &__item {
+    &:not(:first-child) {
+      margin-top:5px;
+    }
+  }
+  &__link {
+    font-weight: bold;
+    transition:all 0.2s;
+    &:hover {
+      color:@main-color;
+    }
+    &_phone {
+      font-family: @heading-font;
+      font-size:24px;
+    }
+    &_mail {
+      font-size:18px;
+    }
+  }
+  &__socials-wrapper {
+    max-width: 200px;
+    margin:30px auto 0 auto;
+  }
+  &__socials {
+    margin-top:-15px;
+    margin-left: -15px;
+    display:flex;
+    justify-content: center;
+  }
+  &__social {
+    display:inline-block;
+    position:relative;
+    background-color:@dark-color;
+    border-radius: 50%;
+    height:40px;
+    width:40px;
+    margin-left: 15px;
+    margin-top:10px;
+    transition: all 0.2s;
+    &:hover {
+      background-color:@main-color;
+    }
+    &:after {
+      position:absolute;
+      font-family: "FontAwesome";
+      font-size:22px;
+      top:50%;
+      left:50%;
+      color:@light-color;
+      transform:translate(-50%,-50%);
+    }
+    &_vk:after {
+      content:"\f189";
+    }
+    &_inst:after {
+      content:"\f16d";
+    }
+    &_whatsapp:after {
+      content:"\f232";
+    }
+  }
+  &__map {
+    width:100%;
+    height:100%;
+  }
+}

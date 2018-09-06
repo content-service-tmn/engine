@@ -6,7 +6,7 @@
     align-items: center;
   }
   &__logo {
-
+    max-width: 200px;
   }
   &__nav {
     flex-grow: 0;
@@ -20,20 +20,32 @@
     padding:10px 15px;
     font-family: @main-font;
     font-size:14px;
-    color:@dark-color;
-    transition:all 0.2s;
+    color:#fff;
     text-transform: uppercase;
     font-weight: 700;
-    &:hover {
+    position: relative;
+    &:after {
+      content:"";
+      position:absolute;
+      height:4px;
       background-color:@main-color;
-      color:white;
+      left:50%;
+      right:50%;
+      bottom:0;
+      transition:all 0.5s;
+    }
+    &:hover {
+      color:#fff;
+      &:after {
+        left:0;
+        right:0;
+      }
     }
   }
 }
 
 .logo {
   display:inline-block;
-  max-width: 200px;
   &__img {
     display:block;
     width:100%;

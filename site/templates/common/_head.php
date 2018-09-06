@@ -9,9 +9,9 @@
 <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:200,200i,300,400,400i,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet"> -->
 <script
-src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 <?php // generate css / js
    $js = AIOM::JS(array(
     "assets/uikit/js/core/core.js",
@@ -21,6 +21,7 @@ crossorigin="anonymous"></script>
     "assets/uikit/js/core/smooth-scroll.js",
     "assets/uikit/js/core/modal.js",
     "assets/uikit/js/components/lightbox.js",
+    "assets/uikit/js/core/offcanvas.js",
     "assets/uikit/js/components/notify.js",
      "assets/js/template.js"
    ));

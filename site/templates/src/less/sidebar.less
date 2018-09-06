@@ -1,0 +1,87 @@
+.sidebar {
+  box-sizing: border-box;
+  padding: 30px;
+  width: 320px;
+  height:100%;
+  &__logo {
+    max-width: 150px;
+  }
+  &__subheading {
+    margin-top:60px;
+    font-size:24px;
+    font-family: @heading-font;
+    color:#000;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__contacts {
+    margin-top:25px;
+    text-align: center;
+  }
+  &__contact {
+    font-size:14px;
+    line-height: 30px;
+    font-family: @heading-font;
+    letter-spacing: 1px;
+    &_phone {
+      font-weight: 800;
+      font-size:18px;
+      line-height: 30px;
+    }
+  }
+  &__name {
+    display:block;
+    margin:-30px -30px 0 -30px;
+    color:white;
+    font-family: @heading-font;
+    font-size:18px;
+    line-height: 15px;
+    font-weight: 700;
+    padding: 32px 75px 28px 30px;
+    background-color:@main-color;
+    text-transform: uppercase;
+  }
+  &__element {
+    margin-top:15px;
+  }
+  &__submit {
+    margin-top:15px;
+  }
+  &__text {
+    margin-top:15px;
+  }
+  &__join {
+    text-align: center;
+    font-size:24px;
+    margin-top:40px;
+    line-height: 50px;
+    font-weight: 600;
+    color:black;
+  }
+  &__form {
+    margin-top:50px;
+  }
+  &__close {
+    &:before,&:after {
+      background-color:@dark-color;
+    }
+  }
+  &__button {
+    text-align: center;
+    
+  }
+  &__items {
+    margin-top:50px;
+    font-weight: 700;
+    font-size:14px;
+    line-height: 22px;
+    font-family: @heading-font;
+    text-transform: uppercase;
+    a {
+      color:@dark-color;
+    }
+    li+li {
+      margin-top:20px;
+    }
+  }
+}
