@@ -12,7 +12,7 @@ register_shutdown_function('tracyConsoleShutdownHandler');
 \TracyDebugger::$fromConsole = true;
 
 // populate API variables, eg so $page equals $this->wire('page')
-$pwVars = function_exists('\ProcessWire\wire') ? $this->fuel : \ProcessWire\wire('all');
+$pwVars = function_exists('wire') ? $this->fuel : \ProcessWire\wire('all');
 foreach($pwVars->getArray() as $key => $value) {
     $$key = $value;
 }
@@ -34,12 +34,12 @@ if($user->isSuperuser()) {
     // the other approach to fix this is to call an external CodeProcessor.php file via ajax as per PM with @bernhard
     $readyPath = $this->wire('config')->paths->root . 'site/ready.php';
     $finishedPath = $this->wire('config')->paths->root . 'site/finished.php';
-    if(file_exists($readyPath)) include_once(\ProcessWire\wire('files')->compile($readyPath,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
-    if(file_exists($finishedPath)) include_once(\ProcessWire\wire('files')->compile($finishedPath,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
+    if(file_exists($readyPath)) include_once($readyPath);
+    if(file_exists($finishedPath)) include_once($finishedPath);
 
     $cachePath = $this->wire('config')->paths->cache . 'TracyDebugger/';
-    if(!is_dir($cachePath)) if(!\ProcessWire\wiremkdir($cachePath)) {
-        throw new \ProcessWire\WireException("Unable to create cache path: $cachePath");
+    if(!is_dir($cachePath)) if(!wireMkdir($cachePath)) {
+        throw new WireException("Unable to create cache path: $cachePath");
     }
 
     $this->file = $cachePath.(isset($_POST['tracyConsole']) ? 'consoleCode.php' : 'snippetRunner.php');
@@ -85,7 +85,7 @@ if($user->isSuperuser()) {
     }
     $code = "$codePrefixes\n$code";
 
-    if(!file_put_contents($this->file, $code, LOCK_EX)) throw new \ProcessWire\WireException("Unable to write file: $this->file");
+    if(!file_put_contents($this->file, $code, LOCK_EX)) throw new WireException("Unable to write file: $this->file");
     if($this->wire('config')->chmodFile) chmod($this->file, octdec($this->wire('config')->chmodFile));
 
     if($page->template != 'admin' && $this->wire('input')->post->accessTemplateVars === "true") {
@@ -96,12 +96,12 @@ if($user->isSuperuser()) {
         ob_start();
         foreach($this->wire('session')->tracyIncludedFiles as $key => $path) {
             if($path != $this->file && $path != $page->template->filename) {
- include_once(\ProcessWire\wire('files')->compile($path,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
+                include_once($path);
             }
         }
         // template file is excluded above and included now, after all others, to prevent include errors to
         // relative file paths preventing access to all variables/functions - happens especially when filecompiler is off
- include_once(\ProcessWire\wire('files')->compile($page->template->filename,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
+        include_once($page->template->filename);
 
         $templateVars = get_defined_vars();
         ob_end_clean();
@@ -113,7 +113,7 @@ if($user->isSuperuser()) {
 
         // this needs to be here, not before the template != 'admin' conditional
         // because it is converted to an integer during output buffering
-        $t = new \ProcessWire\TemplateFile(\ProcessWire\wire('files')->compile($this->file,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
+        $t = new TemplateFile($this->file);
 
         // populate template with all $templateVars
         foreach($templateVars as $key => $value) {
@@ -140,7 +140,7 @@ if($user->isSuperuser()) {
 
 
     // if in admin then $t won't have been instantiated above so do it now
-    if(!isset($t) || !$t instanceof \ProcessWire\TemplateFile) $t = new \ProcessWire\TemplateFile(\ProcessWire\wire('files')->compile($this->file,array('includes'=>true,'namespace'=>true,'modules'=>false,'skipIfNamespace'=>false)));
+    if(!isset($t) || !$t instanceof TemplateFile) $t = new TemplateFile($this->file);
 
     \Tracy\Debugger::timer('consoleCode');
     $initialMemory = memory_get_usage();
@@ -235,7 +235,7 @@ function tracyConsoleShutdownHandler() {
 }
 
 function writeError($error) {
-    $customErrStr = $error['message'] . ' on line: ' . (strpos($error['file'], 'cache'.DIRECTORY_SEPARATOR.'TracyDebugger') !== false ? $error['line'] - 1 : $error['line']) . (strpos($error['file'], 'cache'.DIRECTORY_SEPARATOR.'TracyDebugger') !== false ? '' : ' in ' . str_replace(\ProcessWire\wire('config')->paths->cache . 'FileCompiler'.DIRECTORY_SEPARATOR, '../', $error['file']));
+    $customErrStr = $error['message'] . ' on line: ' . (strpos($error['file'], 'cache'.DIRECTORY_SEPARATOR.'TracyDebugger') !== false ? $error['line'] - 1 : $error['line']) . (strpos($error['file'], 'cache'.DIRECTORY_SEPARATOR.'TracyDebugger') !== false ? '' : ' in ' . str_replace(wire('config')->paths->cache . 'FileCompiler'.DIRECTORY_SEPARATOR, '../', $error['file']));
     $customErrStrLog = $customErrStr . (strpos($error['file'], 'cache'.DIRECTORY_SEPARATOR.'TracyDebugger') !== false ? ' in Tracy Console Panel' : '');
     \TD::fireLog($customErrStrLog);
     \TD::log($customErrStrLog, 'error');

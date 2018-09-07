@@ -128,7 +128,7 @@ class RequestInfoPanel extends BasePanel {
                 $fieldCode = '<pre>';
                 $fieldCode .= "\$form->add([\n";
                 $field = $this->wire('fields')->get((int)$this->wire('input')->get('id'));
-                $fieldCode .= "\t'type' => '" . (string)$field->getInputfield(new \ProcessWire\NullPage()) . "',\n";
+                $fieldCode .= "\t'type' => '" . (string)$field->getInputfield(new NullPage()) . "',\n";
                 $fieldCode .= "\t'name' => '$field->name',\n";
                 $fieldCode .= "\t'label' => __('$field->label'),\n";
                 foreach($field->getArray() as $k => $v) {
@@ -342,7 +342,7 @@ class RequestInfoPanel extends BasePanel {
                 </tr>
                 <tr>
                     <td>Locked (status)</td>
-                    <td>'. ($p->is(\ProcessWire\Page::statusLocked) ? "&#10004;" : "&#x2718;") .'</td>
+                    <td>'. ($p->is(Page::statusLocked) ? "&#10004;" : "&#x2718;") .'</td>
                 </tr>
             </table>';
         }
@@ -635,7 +635,7 @@ class RequestInfoPanel extends BasePanel {
     }
 
 
-    private function getFieldArray(\ProcessWire\Page $p, $f) {
+    private function getFieldArray(Page $p, $f) {
         $of = $p->of();
         $p->of(false);
         $fieldArray = '';
@@ -645,16 +645,16 @@ class RequestInfoPanel extends BasePanel {
            || $f->type == "FieldtypePassword"
            || $f->type == "FieldtypeFieldsetClose") return false;
 
-        if($f->type instanceof \ProcessWire\FieldtypeRepeater) {
+        if($f->type instanceof FieldtypeRepeater) {
             if(is_object($p->$f) && count($p->$f)) {
                 $fieldArray = array();
                 foreach($p->$f as $o) $fieldArray[$o->id] = $o->getIterator();
             }
         }
-        elseif($f->type instanceof \ProcessWire\FieldtypePage) {
+        elseif($f->type instanceof FieldtypePage) {
             if(is_object($p->$f) && count($p->$f)) {
                 $fieldArray = array();
-                if($p->$f instanceof \ProcessWire\PageArray) {
+                if($p->$f instanceof PageArray) {
                     foreach($p->$f as $o) $fieldArray[$o->id] = $o->getIterator();
                 }
                 else {
@@ -666,7 +666,7 @@ class RequestInfoPanel extends BasePanel {
                 $fieldArray = $p->$f;
             }
         }
-        elseif($f->type instanceof \ProcessWire\FieldtypeFile) {
+        elseif($f->type instanceof FieldtypeFile) {
             $fieldArray = array();
             $fieldArray = $p->$f->getIterator();
         }
@@ -685,17 +685,17 @@ class RequestInfoPanel extends BasePanel {
         $imagePreview = '';
         $inputfield = \TracyDebugger::getDataValue('imagesInFieldListValues') ? $f->getInputfield($p) : null;
 
-        if($f->type instanceof \ProcessWire\FieldtypeRepeater) {
+        if($f->type instanceof FieldtypeRepeater) {
             if(is_object($p->$f) && count($p->$f)) {
                 foreach($p->$f as $subpage) {
                     $imageStr .= $this->getImages($subpage);
                 }
             }
         }
-        elseif($f->type instanceof \ProcessWire\FieldtypePage) {
+        elseif($f->type instanceof FieldtypePage) {
             if(is_object($p->$f)) {
                 $fieldArray = array();
-                if($p->$f instanceof \ProcessWire\PageArray) {
+                if($p->$f instanceof PageArray) {
                     foreach($p->$f as $subpage) {
                         $imageStr .= $this->getImages($subpage);
                     }
@@ -705,7 +705,7 @@ class RequestInfoPanel extends BasePanel {
                 }
             }
         }
-        elseif($f->type instanceof \ProcessWire\FieldtypeImage) {
+        elseif($f->type instanceof FieldtypeImage) {
             foreach($p->$f as $image) {
                 $imageStr .= $this->imageStr($inputfield, $image);
             }
@@ -722,12 +722,12 @@ class RequestInfoPanel extends BasePanel {
         foreach($p as $field => $item) {
             $f = $this->wire('fields')->get($field);
             // this is for nested repeaters
-            if($item && $f && $f->type instanceof \ProcessWire\FieldtypeRepeater) {
+            if($item && $f && $f->type instanceof FieldTypeRepeater) {
                 foreach($p->$f as $subpage) {
                     $imageStr .= $this->getImages($subpage);
                 }
             }
-            elseif($item && $f && $f->type instanceof \ProcessWire\FieldtypeImage) {
+            elseif($item && $f && $f->type instanceof FieldTypeImage) {
                 $inputfield = \TracyDebugger::getDataValue('imagesInFieldListValues') ? $f->getInputfield($p) : null;
                 foreach($item as $image) {
                     $imageStr .= $this->imageStr($inputfield, $image);
