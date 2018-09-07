@@ -1,0 +1,47 @@
+.done {
+  padding:90px 0;
+  &__heading {
+    text-align: center;
+    font-family: @heading-font;
+    font-weight: 800;
+    font-size:48px;
+    color:@dark-color;
+  }
+  &__wrapper {
+    margin-top:60px;
+  }
+  &__grid {
+    display:flex;
+    margin-left: -30px;
+  }
+  &__cell {
+    padding-left: 30px;
+    box-sizing: border-box;
+    width:25%;
+  }
+  &__circle {
+    height:160px;
+    width:160px;
+    margin:0 auto;
+    border-radius:50%;
+    background-color:@main-color;
+    font-family:@heading-font;
+    font-weight: 700;
+    color:#fff;
+    position:relative;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__number {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:42px;
+  }
+  &__text {
+    margin:30px auto 0 auto;
+    text-align: center;
+    max-width: 300px;
+  }
+}
