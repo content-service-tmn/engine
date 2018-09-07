@@ -342,7 +342,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 10): ?>
-    <section class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
+    <section id="price" class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
       <div class="price__wrapper">
         <div class="container container_center">
           <div class="price__panel">
@@ -439,14 +439,14 @@
       </div>
     </section>
     <?php endif; ?>
-    <?php if ($block->repeater_matrix_type == 14): ?>
+    <?php if ($block->repeater_matrix_type == 16): ?>
     <section class="checks">
       <div class="container container_center">
         <div class="checks__grid">
-            <?php foreach ($block->done as $item): ?>
+            <?php foreach ($block->checked as $item): ?>
               <div class="checks__cell">
                 <div class="checks__panel">
-                  <p><?=$item?></p>
+                  <p><?= $item->item ?></p>
                 </div>
               </div>
             <?php endforeach; ?>
@@ -483,6 +483,28 @@
       </div>
     </section>
     <?php endif; ?>
+
+    <?php if ($block->repeater_matrix_type == 14): ?>
+    <section class="done">
+      <div class="container container_center">
+        <h2 class="done__heading">Что уже сделано</h2>
+        <div class="done__wrapper">
+          <div class="done__grid">
+              <?php foreach ($block->done as $item): ?>
+                <div class="done__cell">
+                  <div class="done__circle">
+                    <h3 class="done__number"><?=$item->number?></h3>
+                  </div>
+                  <p class="done__text"><?=$item->item?></p>
+                </div>
+              <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <?php endif; ?>
+
 
 <?php endforeach; ?>
 
