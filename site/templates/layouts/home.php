@@ -76,7 +76,7 @@
   </div>
 </section>
 
-<?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
+<?php foreach ($page->blocks as $block): ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header"
              style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
@@ -230,7 +230,7 @@
     <?php if ($block->repeater_matrix_type == 8): ?>
         <?php
         $placeholders = ["E-mail" => "E-mail", "Phone" => "Номер телефона"];
-        $validators = ["E-mail" => "", "Phone" => ""];
+        $validators = ["E-mail" => ".+@.+\..+", "Phone" => "\+?[7-8]\d{10}"];
         ?>
     <section class="more" style="background-image:url(<?= $config->urls->templates . 'assets/img/main.jpg' ?>)">
       <div class="more__wrapper">
@@ -241,12 +241,12 @@
           <div class="more__form">
             <div class="more__element form__element">
               <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
-              <input name="more" id="more" class="form__input js-input"
-                     data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
+              <input name="more" id="more<?=$block->id?>" class="form__input js-input <?php if ($block->inputBlock_inputType=='Phone') echo 'js-phone'?>"> </input>
             </div>
+            <?php bd($block->id); ?>
             <div class="more__element form__submit submit">
               <span class="submit__label">узнать подробнее</span>
-              <button class="submit__button"></button>
+              <button data-input="more<?=$block->id?>" data-validator="<?= $validators[$block->inputBlock_inputType] ?>" class="submit__button"></button>
             </div>
           </div>
         </form>
@@ -274,7 +274,7 @@
                       <div class="slideshow__button-wrapper">
                         <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
                         <?php foreach($slide->slide_images as $image): ?>
-                        	<a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup".<?$block->id?>."'}"></a>
+                        	<a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<?$block->id?>'}"></a>
                         <?php endforeach; ?>
                       </div>
                     </div>
@@ -395,7 +395,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 13): ?>
-    <section id="feedbacks" class="reviews"style=" background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+    <section id="feedbacks" class="reviews" style=" background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
         <h3 class="reviews__subheading"><?= $block->feedbacks_header ?></h3>
         <h2 class="reviews__heading"><?= $block->feedbacks_title ?></h2>

@@ -1,5 +1,9 @@
 <?php namespace Processwire; ?>
 
+<?php if ($config->ajax): ?>
+  <?= $templateRender; ?>
+<?php else: ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -86,3 +90,4 @@
 </body>
 
 </html>
+<?php endif; ?>
