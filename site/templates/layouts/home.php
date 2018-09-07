@@ -66,17 +66,17 @@
           <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
         </a>
         <ul class="menu__nav">
-          <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
-            <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-              class="menu__link menu__link_contrast"><?= $item->nameForNav ?></a></li>
+            <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+              <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
+                                        class="menu__link menu__link_contrast"><?= $item->nameForNav ?></a></li>
             <?php endif; endforeach; ?>
-          </ul>
-        </div>
+        </ul>
       </div>
+    </div>
   </div>
 </section>
 
-<?php foreach ($page->blocks as $block): bd($block->repeater_matrix_type); ?>
+<?php foreach ($page->blocks as $block): ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header"
              style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
@@ -103,7 +103,8 @@
               <h2 class="header__heading"><?= $block->header_title ?></h2>
               <p class="header__description"><?= $block->header_subtitle ?></p>
               <div class="header__button-wrapper">
-                <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="header" class="header__button callform">узнать подробнее</a>
+                <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="header"
+                   class="header__button callform">узнать подробнее</a>
                 <a href="#sidebar" data-uk-offcanvas="{mode:'slide'}" class="header__button">меню</a>
               </div>
             </div>
@@ -146,7 +147,9 @@
               <?= $block->benefits_subtitle ?>
           </p>
           <div class="benefits__button-wrapper">
-            <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить консультацию</a>
+            <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
+               data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить
+              консультацию</a>
           </div>
         </div>
         <div class="benefits__wrapper">
@@ -197,7 +200,9 @@
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
-                      <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить тариф</a>
+                      <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
+                         data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить
+                        тариф</a>
                     </div>
                   </div>
                 </div>
@@ -230,7 +235,7 @@
     <?php if ($block->repeater_matrix_type == 8): ?>
         <?php
         $placeholders = ["E-mail" => "E-mail", "Phone" => "Номер телефона"];
-        $validators = ["E-mail" => "", "Phone" => ""];
+        $validators = ["E-mail" => ".+@.+\..+", "Phone" => "\+?[7-8]\d{10}"];
         ?>
     <section class="more" style="background-image:url(<?= $config->urls->templates . 'assets/img/main.jpg' ?>)">
       <div class="more__wrapper">
@@ -241,12 +246,14 @@
           <div class="more__form">
             <div class="more__element form__element">
               <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
-              <input name="more" id="more" class="form__input js-input"
-                     data-validator="<?= $validators[$block->inputBlock_inputType] ?>"> </input>
+              <input name="more" id="more<?= $block->id ?>"
+                     class="form__input js-input <?php if ($block->inputBlock_inputType == 'Phone') echo 'js-phone' ?>"> </input>
             </div>
+              <?php bd($block->id); ?>
             <div class="more__element form__submit submit">
               <span class="submit__label">узнать подробнее</span>
-              <button class="submit__button"></button>
+              <button data-input="more<?= $block->id ?>"
+                      data-validator="<?= $validators[$block->inputBlock_inputType] ?>" class="submit__button"></button>
             </div>
           </div>
         </form>
@@ -254,7 +261,8 @@
     </section>
     <?php endif; ?>
     <?php if ($block->repeater_matrix_type == 3): ?>
-    <section id="photoareas" class="slideshow-section" style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+    <section id="photoareas" class="slideshow-section"
+             style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
         <h3 class="slideshow-section__subheading">Надзаголовок</h3>
         <h2 class="slideshow-section__heading">Заголовок</h2>
@@ -263,7 +271,8 @@
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
-                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
+                    <div class="slideshow__img"
+                         style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -272,10 +281,11 @@
                     </div>
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
-                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
-                        <?php foreach($slide->slide_images as $image): ?>
-                        	<a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup".<?$block->id?>."'}"></a>
-                        <?php endforeach; ?>
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button"
+                           data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
+                          <?php foreach ($slide->slide_images as $image): ?>
+                            <a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<? $block->id ?>'}"></a>
+                          <?php endforeach; ?>
                       </div>
                     </div>
                   </div>
@@ -297,7 +307,8 @@
 
 
     <?php if ($block->repeater_matrix_type == 9): ?>
-    <section id="albums" class="slideset-section" style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+    <section id="albums" class="slideset-section"
+             style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
         <h3 class="slideset-section__subheading">Надзаголовок</h3>
         <h2 class="slideset-section__heading">Заголовок</h2>
@@ -307,8 +318,10 @@
                 <?php foreach ($block->slides as $slide): ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
-                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
-                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
+                      <div class="slideset__img"
+                           style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideset__link"
+                           data-uk-lightbox="{group:'1'}"></a>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
@@ -329,7 +342,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 10): ?>
-    <section class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
+    <section id="price" class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
       <div class="price__wrapper">
         <div class="container container_center">
           <div class="price__panel">
@@ -356,7 +369,8 @@
                 <li class="footer__item"><a href="tel:<?= phoneLink($phone) ?>"
                                             class="footer__link footer__link_phone"><?= $phone ?></a></li>
               <?php endforeach; ?>
-            <li class="footer__item"><a href="mailto:<?= $block->email ?>" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
+            <li class="footer__item"><a href="mailto:<?= $block->email ?>"
+                                        class="footer__link footer__link_mail"><?= $block->email ?></a></li>
           </ul>
           <div class="footer__socials-wrapper">
             <div class="footer__socials">
@@ -395,7 +409,8 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 13): ?>
-    <section id="feedbacks" class="reviews"style=" background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+    <section id="feedbacks" class="reviews"
+             style=" background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
         <h3 class="reviews__subheading"><?= $block->feedbacks_header ?></h3>
         <h2 class="reviews__heading"><?= $block->feedbacks_title ?></h2>
@@ -424,85 +439,74 @@
       </div>
     </section>
     <?php endif; ?>
+    <?php if ($block->repeater_matrix_type == 16): ?>
+    <section class="checks">
+      <div class="container container_center">
+        <div class="checks__grid">
+            <?php foreach ($block->checked as $item): ?>
+              <div class="checks__cell">
+                <div class="checks__panel">
+                  <p><?= $item->item ?></p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+
+    <?php endif; ?>
+
+
+    <?php if ($block->repeater_matrix_type == 15): ?>
+    <section class="info">
+      <div class="container container_center">
+        <div class="info__grid">
+          <div class="info__cell">
+            <div class="info__logo logo">
+              <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+            </div>
+          </div>
+          <div class="info__cell">
+            <p>2006-2018 гг.</p>
+          </div>
+          <div class="info__cell">
+            <p>ИП Чернятьев М.Н.</p>
+            <p>ОГРНИП 33443434322234</p>
+          </div>
+          <div class="info__cell">
+            <p>Есть вопросы? Звони!</p>
+            <p>
+              <a href="tel:900060" class="info__link">90-00-60</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>
+
+    <?php if ($block->repeater_matrix_type == 14): ?>
+    <section class="done">
+      <div class="container container_center">
+        <h2 class="done__heading">Что уже сделано</h2>
+        <div class="done__wrapper">
+          <div class="done__grid">
+              <?php foreach ($block->done as $item): ?>
+                <div class="done__cell">
+                  <div class="done__circle">
+                    <h3 class="done__number"><?=$item->number?></h3>
+                  </div>
+                  <p class="done__text"><?=$item->item?></p>
+                </div>
+              <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <?php endif; ?>
+
 
 <?php endforeach; ?>
 
-<section class="checks">
-  <div class="container container_center">
-    <div class="checks__grid">
-      <div class="checks__cell">
-        <div class="checks__panel">
-          <p>Фотосъемка в интерьере фотозоны	</p>
-        </div>
-      </div>
-      <div class="checks__cell">
-        <div class="checks__panel">
-          <p>Ретушь профессионального дизайнера	</p>
-        </div>
-      </div>
-      <div class="checks__cell">
-        <div class="checks__panel">
-          <p>Готовый дизайн проект альбома</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="info">
-  <div class="container container_center">
-    <div class="info__grid">
-      <div class="info__cell">
-        <div class="info__logo logo">
-          <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
-        </div>
-      </div>
-      <div class="info__cell">
-        <p>2006-2018 гг.</p>
-      </div>
-      <div class="info__cell">
-        <p>ИП Чернятьев М.Н.</p>
-        <p>ОГРНИП 33443434322234</p>
-      </div>
-      <div class="info__cell">
-        <p>Есть вопросы? Звони!</p>
-        <p>
-          <a href="tel:900060" class="info__link">90-00-60</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="done">
-  <div class="container container_center">
-    <h2 class="done__heading">Что уже сделано</h2>
-    <div class="done__wrapper">
-      <div class="done__grid">
-        <div class="done__cell">
-          <div class="done__circle">
-            <h3 class="done__number">11213</h3>
-          </div>
-          <p class="done__text">Детей отснято за время работы проекта фотопоток</p>
-        </div>
-        <div class="done__cell">
-          <div class="done__circle">
-            <h3 class="done__number">57</h3>
-          </div>
-          <p class="done__text">Учебных заведений сотрудничают с нами и число постоянно растет</p>
-        </div>
-        <div class="done__cell">
-          <div class="done__circle">
-            <h3 class="done__number">11</h3>
-          </div>
-          <p class="done__text">Человек состоит в команде проекта "#Фотопоток". Фотографы, ретушеры, полиграфисты и производственники</p>
-        </div>
-        <div class="done__cell">
-          <div class="done__circle">
-            <h3 class="done__number">3</h3>
-          </div>
-          <p class="done__text">Года #Фотопоток работает в Тюмени</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
