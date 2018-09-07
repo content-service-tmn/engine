@@ -56,7 +56,7 @@
   </div>
 </section>  -->
 
-<a href="" class="burger"></a>
+<a href="#sidebar" class="burger" data-uk-offcanvas="{mode:'slide'}"></a>
 
 <section id="menu" class="menu__wrapper">
   <div class="menu menu_contrast">
@@ -68,7 +68,7 @@
         <ul class="menu__nav">
             <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
               <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-                                        class="menu__link menu__link_contrast"><?= $item->nameForNav ?></a></li>
+                                        class="menu__link menu__link_contrast" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
             <?php endif; endforeach; ?>
         </ul>
       </div>
@@ -91,7 +91,7 @@
                 <ul class="menu__nav">
                     <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
                       <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-                                                class="menu__link"><?= $item->nameForNav ?></a></li>
+                                                class="menu__link" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
                     <?php endif; endforeach; ?>
                 </ul>
               </div>
@@ -143,13 +143,15 @@
       <div class="container container_center">
         <div class="benefits__header">
           <h3 class="benefits__heading"><?= $block->benefits_title ?></h3>
-          <p class="benefits__description">
+          <div class="benefits__right">
+            <p class="benefits__description">
               <?= $block->benefits_subtitle ?>
-          </p>
-          <div class="benefits__button-wrapper">
-            <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
-               data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить
+            </p>
+            <div class="benefits__button-wrapper">
+              <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
+              data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить
               консультацию</a>
+            </div>
           </div>
         </div>
         <div class="benefits__wrapper">
@@ -239,24 +241,26 @@
         ?>
     <section class="more" style="background-image:url(<?= $config->urls->templates . 'assets/img/main.jpg' ?>)">
       <div class="more__wrapper">
-        <h3 class="more__subheading"><?= $block->inputBlock_header ?></h3>
-        <h2 class="more__heading"><?= $block->inputBlock_title ?></h2>
-        <p class="more__description"><?= $block->inputBlock_subtitle ?></p>
-        <form action="" class="form">
-          <div class="more__form">
-            <div class="more__element form__element">
-              <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
-              <input name="more" id="more<?= $block->id ?>"
-                     class="form__input js-input <?php if ($block->inputBlock_inputType == 'Phone') echo 'js-phone' ?>"> </input>
-            </div>
+        <div class="container container_center">
+          <h3 class="more__subheading"><?= $block->inputBlock_header ?></h3>
+          <h2 class="more__heading"><?= $block->inputBlock_title ?></h2>
+          <p class="more__description"><?= $block->inputBlock_subtitle ?></p>
+          <form action="" class="form">
+            <div class="more__form">
+              <div class="more__element form__element">
+                <label class="form__label" for="more"><?= $placeholders[$block->inputBlock_inputType] ?></label>
+                <input name="more" id="more<?= $block->id ?>"
+                class="form__input js-input <?php if ($block->inputBlock_inputType == 'Phone') echo 'js-phone' ?>"> </input>
+              </div>
               <?php bd($block->id); ?>
-            <div class="more__element form__submit submit">
-              <span class="submit__label">узнать подробнее</span>
-              <button data-input="more<?= $block->id ?>"
-                      data-validator="<?= $validators[$block->inputBlock_inputType] ?>" class="submit__button"></button>
-            </div>
-          </div>
-        </form>
+              <div class="more__element form__submit submit">
+                <span class="submit__label">узнать подробнее</span>
+                <button data-input="more<?= $block->id ?>"
+                  data-validator="<?= $validators[$block->inputBlock_inputType] ?>" class="submit__button"></button>
+                </div>
+              </div>
+            </form>
+        </div>
       </div>
     </section>
     <?php endif; ?>
@@ -392,6 +396,7 @@
     <?php if ($block->repeater_matrix_type == 12): ?>
     <section id="scheme" class="scheme">
       <div class="container container_center">
+        <h2 class="scheme__heading">Как мы работаем</h2>
         <div class="scheme__grid">
             <?php foreach ($block->scheme as $step): ?>
               <div class="scheme__cell">
@@ -414,7 +419,7 @@
       <div class="container container_center">
         <h3 class="reviews__subheading"><?= $block->feedbacks_header ?></h3>
         <h2 class="reviews__heading"><?= $block->feedbacks_title ?></h2>
-        <div data-uk-slideset="{default: 2}">
+        <div data-uk-slideset="{default: 1, medium:2}">
           <div class="uk-slidenav-position reviews__slideset">
             <ul class="slideset uk-slideset">
                 <?php foreach ($block->feedbacks_items as $feedback): ?>
@@ -431,8 +436,8 @@
                   </li>
                 <?php endforeach; ?>
             </ul>
-            <a href="" class="slideset__nav nav nav_prev" data-uk-slideset-item="previous"></a>
-            <a href="" class="slideset__nav nav nav_next" data-uk-slideset-item="next"></a>
+            <a href="" class="slideset__nav nav nav_prev slideset__nav_reviews" data-uk-slideset-item="previous"></a>
+            <a href="" class="slideset__nav nav nav_next slideset__nav_reviews" data-uk-slideset-item="next"></a>
           </div>
           <ul class="dotnav slideset__dotnav uk-slideset-nav uk-dotnav"></ul>
         </div>
@@ -507,6 +512,3 @@
 
 
 <?php endforeach; ?>
-
-
-

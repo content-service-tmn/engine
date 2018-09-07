@@ -8,6 +8,15 @@
       flex-wrap: wrap;
     }
   }
+  &__right {
+    display:flex;
+    flex-grow: 1;
+    @media(max-width: 959px) {
+      flex-wrap: wrap;
+      padding-left: 0;
+    }
+    padding-left: 45px;
+  }
   &__heading {
     padding-right: 30px;
     position:relative;
@@ -35,11 +44,13 @@
     }
   }
   &__description {
-    padding:10px 120px 10px 45px;
+    padding:10px 120px 10px 0px;
     font-family:@main-font;
     font-weight: 200;
     @media(max-width: 959px) {
-      padding-right: 90px;
+      padding-right: 0px;
+      width:100%;
+      display:none;
     }
     @media(max-width: 767px) {
       width:100%;
@@ -52,11 +63,12 @@
     text-align: center;
     padding-top:10px;
     @media(max-width: 959px) {
-      flex-shrink: 1;
+      padding-top:0;
+      text-align: center;
     }
     @media(max-width: 767px) {
       width:100%;
-      padding-top:0;
+      padding-top:30px;
     }
   }
   &__button {
