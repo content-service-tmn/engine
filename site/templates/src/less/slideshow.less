@@ -1,11 +1,13 @@
 .slideshow {
-  overflow: visible;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin:0 60px;
+  width:auto;
+  @media(max-width: 767px) {
+    margin:0;
+  }
   &__cell {
     box-sizing: border-box;
-    padding:0 60px;
-    @media(max-width: 767px) {
-      padding:0;
-    }
   }
   &__item {
     background-color:white;
