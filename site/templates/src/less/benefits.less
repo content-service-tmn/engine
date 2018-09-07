@@ -4,6 +4,9 @@
   &__header {
     display:flex;
     justify-content: space-between;
+    @media(max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
   &__heading {
     padding-right: 30px;
@@ -13,6 +16,11 @@
     font-family: @heading-font;
     font-size:36px;
     font-weight: 200;
+    @media(max-width: 767px) {
+      width:100%;
+      text-align: center;
+      padding-right: 0;
+    }
     &:after {
       content:"";
       position: absolute;
@@ -21,18 +29,35 @@
       top:0;
       bottom:0;
       background-color:@main-color;
+      @media(max-width: 767px) {
+        display:none;
+      }
     }
   }
   &__description {
     padding:10px 120px 10px 45px;
     font-family:@main-font;
     font-weight: 200;
+    @media(max-width: 959px) {
+      padding-right: 90px;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+      padding:30px;
+    }
   }
   &__button-wrapper {
     flex-shrink: 0;
     flex-grow: 1;
     text-align: center;
     padding-top:10px;
+    @media(max-width: 959px) {
+      flex-shrink: 1;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+      padding-top:0;
+    }
   }
   &__button {
     display:inline-block;
@@ -72,6 +97,12 @@
     box-sizing: border-box;
     padding-top:60px;
     width:33.3333%;
+    @media(max-width: 959px) {
+      width:50%;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+    }
   }
   &__item {
     height:100%;

@@ -47,6 +47,10 @@
   padding:60px 45px 130px;
   overflow:hidden;
   position:relative;
+  @media(max-width: 959px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   &:before {
     content:"";
     position:absolute;
@@ -118,7 +122,8 @@
     text-align: center;
     left:45px;
     right:45px;
-    bottom:60px;
+    bottom:112px;
+    transform:translateY(100%);
   }
   &__button {
     display:inline-block;

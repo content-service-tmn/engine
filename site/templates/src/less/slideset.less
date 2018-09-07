@@ -15,6 +15,9 @@
   &_prev {
     left:0;
     transform:translate(-100%,-50%);
+    @media(max-width: 1139px) {
+      transform:translate(0,-50%);
+    }
     &:before {
       transform:translate(-50%,-50%) rotate(-45deg);
     }
@@ -22,6 +25,9 @@
   &_next {
     right:0;
     transform:translate(100%,-50%);
+    @media(max-width: 1139px) {
+      transform:translate(0,-50%);
+    }
     &:before {
       transform:translate(-50%,-50%) rotate(135deg);
     }
@@ -86,6 +92,7 @@
     padding-left: 30px;
   }
   &__item {
+    height:100%;
     background-color:white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
