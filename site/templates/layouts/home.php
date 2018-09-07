@@ -105,7 +105,7 @@
               <div class="header__button-wrapper">
                 <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="header"
                    class="header__button callform">узнать подробнее</a>
-                <a href="#sidebar" data-uk-offcanvas="{mode:'slide'}" class="header__button">меню</a>
+                <a href="<?=$block->header_video?>" class="header__button" data-uk-lightbox>Видео</a>
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@
                   <div class="prices__item prices-block">
                     <h3 class="prices-block__heading"><?= $item->prices_item_name ?></h3>
                     <div class="prices-block__img"
-                         style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
+                         style="background-image:url(<?=$item->prices_item_image->url?>)"></div>
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
@@ -268,7 +268,7 @@
         <h2 class="slideshow-section__heading"><?=$block->slider_title?></h2>
         <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
           <ul class="slideshow uk-slideshow slideshow-section__slideshow">
-              <?php foreach ($block->slides as $slide): ?>
+              <?php foreach ($block->slides as $slide): $id=uniqid(); ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
                     <div class="slideshow__img"
@@ -282,10 +282,10 @@
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
                         <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button"
-                           data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
-                          <?php foreach ($slide->slide_images as $image): ?>
-                            <a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<? $block->id ?>'}"></a>
-                          <?php endforeach; ?>
+                           data-uk-lightbox="{group:'mygroup<?= $id ?>'}">Посмотреть все страницы</a>
+                          <?php $i=0; foreach ($slide->slide_images as $image): if ($i!=0): ?>
+                            <a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<?= $id ?>'}"></a>
+                          <?php endif; $i++; endforeach; ?>
                       </div>
                     </div>
                   </div>
@@ -315,7 +315,7 @@
         <div data-uk-slideset="{default: 1,medium:2}">
           <div class="uk-slidenav-position slideset-section__slideset">
             <ul class="slideset uk-slideset">
-                <?php foreach ($block->slides as $slide): ?>
+                <?php foreach ($block->slides as $slide): $id = uniqid(); ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
                       <div class="slideset__img"
