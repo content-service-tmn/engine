@@ -2,6 +2,10 @@
   position:absolute;
   height:80px;
   width:60px;
+  @media(max-width: 767px) {
+    height:40px;
+    width:30px;
+  }
   &:before {
     content:"";
     position:absolute;
@@ -11,12 +15,22 @@
     height:50px;
     top:50%;
     left:50%;
+    @media(max-width: 767px) {
+      width:25px;
+      height:25px;
+      border-width: 6px;
+      opacity:0.7;
+    }
   }
   &_prev {
     left:0;
     transform:translate(-100%,-50%);
     @media(max-width: 1139px) {
       transform:translate(0,-50%);
+    }
+    @media(max-width: 767px) {
+      left:15px;
+      transform:none;
     }
     &:before {
       transform:translate(-50%,-50%) rotate(-45deg);
@@ -27,6 +41,10 @@
     transform:translate(100%,-50%);
     @media(max-width: 1139px) {
       transform:translate(0,-50%);
+    }
+    @media(max-width: 767px) {
+      right:15px;
+      transform:none;
     }
     &:before {
       transform:translate(-50%,-50%) rotate(135deg);
@@ -86,6 +104,9 @@
 .slideset {
   margin-left: -30px;
   padding:0 60px;
+  @media(max-width: 767px) {
+    padding:0;
+  }
   display:flex;
   justify-content: center;
   &__cell {
@@ -140,5 +161,8 @@
   }
   &__nav {
     top:50%;
+    @media(max-width: 767px) {
+      top:200px;
+    }
   }
 }

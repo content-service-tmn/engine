@@ -44,8 +44,16 @@
     display:flex;
     justify-content: center;
     margin-left: -15px;
+    @media(max-width: 767px) {
+      flex-wrap: wrap;
+      margin-top:0;
+    }
   }
   &__element {
     margin-left: 15px;
+    @media(max-width: 767px) {
+      margin-top:15px;
+      width:100%;
+    }
   }
 }
