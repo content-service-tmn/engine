@@ -448,3 +448,28 @@
     </div>
   </div>
 </section>
+
+<section class="info">
+  <div class="container container_center">
+    <div class="info__grid">
+      <div class="info__cell">
+        <div class="info__logo logo">
+          <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+        </div>
+      </div>
+      <div class="info__cell">
+        <p>2006-2018 гг.</p>
+      </div>
+      <div class="info__cell">
+        <p>ИП Чернятьев М.Н.</p>
+        <p>ОГРНИП 33443434322234</p>
+      </div>
+      <div class="info__cell">
+        <p>Есть вопросы? Звони!</p>
+        <p>
+          <a href="tel:900060" class="info__link">90-00-60</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

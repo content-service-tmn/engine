@@ -91,13 +91,22 @@
       color:#fff;
     }
     &:last-child {
-      padding:15px 45px;
+      padding:15px 75px 15px 45px;
       border-color:#fff;
       color:#fff;
       background-color:transparent;
+      position:relative;
       &:hover {
         background-color:#fff;
         color:@dark-color;
+      }
+      &:after {
+        content:"\f144";
+        position:absolute;
+        right:47px;
+        top:50%;
+        transform:translateY(-50%);
+        font-family: "FontAwesome";
       }
     }
   }
