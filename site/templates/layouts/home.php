@@ -473,3 +473,36 @@
     </div>
   </div>
 </section>
+<section class="done">
+  <div class="container container_center">
+    <h2 class="done__heading">Что уже сделано</h2>
+    <div class="done__wrapper">
+      <div class="done__grid">
+        <div class="done__cell">
+          <div class="done__circle">
+            <h3 class="done__number">11213</h3>
+          </div>
+          <p class="done__text">Детей отснято за время работы проекта фотопоток</p>
+        </div>
+        <div class="done__cell">
+          <div class="done__circle">
+            <h3 class="done__number">57</h3>
+          </div>
+          <p class="done__text">Учебных заведений сотрудничают с нами и число постоянно растет</p>
+        </div>
+        <div class="done__cell">
+          <div class="done__circle">
+            <h3 class="done__number">11</h3>
+          </div>
+          <p class="done__text">Человек состоит в команде проекта "#Фотопоток". Фотографы, ретушеры, полиграфисты и производственники</p>
+        </div>
+        <div class="done__cell">
+          <div class="done__circle">
+            <h3 class="done__number">3</h3>
+          </div>
+          <p class="done__text">Года #Фотопоток работает в Тюмени</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
