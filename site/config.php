@@ -47,7 +47,7 @@ $config->defaultAdminTheme = 'AdminThemeUikit';
  * Installer: Database Configuration
  * 
  */
-$config->dbHost = 'localhost';
+$config->dbHost = 'maximuqc.beget.tech';
 $config->dbName = 'maximuqc_fotonew';
 $config->dbUser = 'maximuqc_fotonew';
 $config->dbPass = 'naxuJJS5YZabCtha';
