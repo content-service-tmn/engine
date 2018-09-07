@@ -262,9 +262,9 @@
         <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
           <ul class="slideshow uk-slideshow slideshow-section__slideshow">
               <?php foreach ($block->slides as $slide): ?>
-                <li class="slideshow__cell">
+                 <li class="slideshow__cell">
                   <div class="slideshow__item">
-                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
+                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -307,8 +307,9 @@
                   <li class="slideset__cell">
                     <div class="slideset__item">
                       <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
-                        <a href="https://pp.userapi.com/c850324/v850324648/1fcad/WW5c2UGgumU.jpg" data-uk-lightbox="{group:'1'}"></a>
+                        <?php foreach ($slide->slide_images as $i => $image): ?>
+                          <a href="<?= $image->url ?>" <?php if (!$i) echo 'class="slideset__link"' ?> data-uk-lightbox="{group:'1'}"></a>
+                        <?php endforeach; ?>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
