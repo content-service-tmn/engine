@@ -6,3 +6,4 @@
 2018-09-05 13:54:16	developer	http://engine.cw40247.tmweb.ru/processwire/module/	Saved module info caches
 2018-09-05 14:23:10	developer	http://engine.cw40247.tmweb.ru/processwire/module/edit?name=FieldtypeSelect	Saved module 'FieldtypeSelect' config data
 2018-09-06 11:05:56	developer	http://engine.cw40247.tmweb.ru/processwire/module/edit?name=TracyDebugger&collapse_info=1	Saved module 'TracyDebugger' config data
+2018-09-07 23:12:02	developer	http://fpotok.ru/processwire/module/edit?name=TracyDebugger&collapse_info=1	Saved module 'TracyDebugger' config data

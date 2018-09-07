@@ -47,10 +47,10 @@ $config->defaultAdminTheme = 'AdminThemeUikit';
  * Installer: Database Configuration
  * 
  */
-$config->dbHost = (gethostname() == "vh130.timeweb.ru")?'localhost':'92.53.96.195';
-$config->dbName = 'cw40247_engine';
-$config->dbUser = 'cw40247_engine';
-$config->dbPass = '5CnGpRTX';
+$config->dbHost = 'localhost';
+$config->dbName = 'maximuqc_fotonew';
+$config->dbUser = 'maximuqc_fotonew';
+$config->dbPass = 'naxuJJS5YZabCtha';
 $config->dbPort = '3306';
 
 /**
@@ -94,5 +94,5 @@ $config->installed = 1535621592;
  * Installer: HTTP Hosts Whitelist
  * 
  */
-$config->httpHosts = array('engine.cw40247.tmweb.ru');
+$config->httpHosts = array('engine.cw40247.tmweb.ru', 'fpotok.ru', 'www.fpotok.ru');
 

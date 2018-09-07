@@ -193,7 +193,7 @@
         <p class="prices__description"><?= $block->prices_subtitle ?></p>
         <div class="prices__wrapper">
           <div class="prices__grid">
-              <?php foreach ($block->prices_items as $item): $delay_prcs+=200; ?>
+              <?php $delay_prcs=0; foreach ($block->prices_items as $item): $delay_prcs+=200; ?>
                 <div class="prices__cell">
                   <div class="prices__item prices-block" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:<?=$delay_prcs?>}">
                     <h3 class="prices-block__heading"><?= $item->prices_item_name ?></h3>
@@ -497,7 +497,7 @@
         <h2 class="done__heading"><?=$block->done_title?></h2>
         <div class="done__wrapper">
           <div class="done__grid">
-              <?php foreach ($block->done as $item): $delay+=200; ?>
+              <?php $delay=0; foreach ($block->done as $item): $delay+=200; ?>
                 <div class="done__cell" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:<?=$delay?>}">
                   <div class="done__circle">
                     <h3 class="done__number"><?=$item->number?></h3>
