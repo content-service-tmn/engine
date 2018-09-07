@@ -264,8 +264,8 @@
     <section id="photoareas" class="slideshow-section"
              style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
-        <h3 class="slideshow-section__subheading">Надзаголовок</h3>
-        <h2 class="slideshow-section__heading">Заголовок</h2>
+        <h3 class="slideshow-section__subheading"><?=$block->slider_header?></h3>
+        <h2 class="slideshow-section__heading"><?=$block->slider_title?></h2>
         <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
           <ul class="slideshow uk-slideshow slideshow-section__slideshow">
               <?php foreach ($block->slides as $slide): ?>
@@ -310,8 +310,8 @@
     <section id="albums" class="slideset-section"
              style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
       <div class="container container_center">
-        <h3 class="slideset-section__subheading">Надзаголовок</h3>
-        <h2 class="slideset-section__heading">Заголовок</h2>
+        <h3 class="slideset-section__subheading"><?=$block->slider_header?></h3>
+        <h2 class="slideset-section__heading"><?=$block->slider_title?></h2>
         <div data-uk-slideset="{default: 1,medium:2}">
           <div class="uk-slidenav-position slideset-section__slideset">
             <ul class="slideset uk-slideset">
