@@ -4,6 +4,9 @@
   &__header {
     display:flex;
     justify-content: space-between;
+    @media(max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
   &__heading {
     padding-right: 30px;
@@ -13,6 +16,11 @@
     font-family: @heading-font;
     font-size:36px;
     font-weight: 200;
+    @media(max-width: 767px) {
+      width:100%;
+      text-align: center;
+      padding-right: 0;
+    }
     &:after {
       content:"";
       position: absolute;
@@ -21,18 +29,35 @@
       top:0;
       bottom:0;
       background-color:@main-color;
+      @media(max-width: 767px) {
+        display:none;
+      }
     }
   }
   &__description {
     padding:10px 120px 10px 45px;
     font-family:@main-font;
     font-weight: 200;
+    @media(max-width: 959px) {
+      padding-right: 90px;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+      padding:30px;
+    }
   }
   &__button-wrapper {
     flex-shrink: 0;
     flex-grow: 1;
     text-align: center;
     padding-top:10px;
+    @media(max-width: 959px) {
+      flex-shrink: 1;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+      padding-top:0;
+    }
   }
   &__button {
     display:inline-block;
@@ -72,6 +97,12 @@
     box-sizing: border-box;
     padding-top:60px;
     width:33.3333%;
+    @media(max-width: 959px) {
+      width:50%;
+    }
+    @media(max-width: 767px) {
+      width:100%;
+    }
   }
   &__item {
     height:100%;
@@ -86,6 +117,10 @@
   padding-right: 90px;
   position:relative;
   z-index:1;
+  @media(max-width: 767px) {
+    padding:0;
+    text-align: center;
+  }
   &:after {
     content:counter(item);
     position:absolute;
@@ -96,9 +131,18 @@
     font-size:200px;
     font-weight: 200;
     color:#d8d8d8;
+    @media(max-width: 767px) {
+      right:50%;
+      transform:translateX(50%);
+      font-size:150px;
+      display:none;
+    }
   }
   &__header {
     display:flex;
+    @media(max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
   &__img {
     display:inline-block;
@@ -110,10 +154,18 @@
     background-color:transparent;
     background-repeat: no-repeat;
     background-size: contain;
+    @media(max-width: 767px) {
+      width:100%;
+      background-position: 50% 50%;
+    }
   }
   &__heading {
     padding-left: 15px;
     font-size:24px;
+    @media(max-width: 767px) {
+      padding-left: 0;
+      width:100%;
+    }
   }
   &__text {
     margin-top:15px;
