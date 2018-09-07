@@ -71,7 +71,7 @@
 
 <script>
     function initMap() {
-      var coordinates= {lat: 57.169883, lng: 65.5453884},
+      var coordinates= {lat: 57.142001, lng: 65.598575},
           options = {
             zoom: 15,
             disableDefaultUI: true,

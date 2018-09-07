@@ -79,7 +79,7 @@
 <?php foreach ($page->blocks as $block): ?>
     <?php if ($block->repeater_matrix_type == 1): ?>
     <section id="header" class="header"
-             style="background-image:url(<?= $config->urls->templates . 'assets/img/capture.jpg' ?>)">
+             style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="header__wrapper">
         <div class="header__grid">
           <div class="header__menu menu">
@@ -239,7 +239,7 @@
         $placeholders = ["E-mail" => "E-mail", "Phone" => "Номер телефона"];
         $validators = ["E-mail" => ".+@.+\..+", "Phone" => "\+?[7-8]\d{10}"];
         ?>
-    <section class="more" style="background-image:url(<?= $config->urls->templates . 'assets/img/main.jpg' ?>)">
+    <section class="more" style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="more__wrapper">
         <div class="container container_center">
           <h3 class="more__subheading"><?= $block->inputBlock_header ?></h3>
@@ -266,7 +266,7 @@
     <?php endif; ?>
     <?php if ($block->repeater_matrix_type == 3): ?>
     <section id="photoareas" class="slideshow-section"
-             style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+             style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="container container_center">
         <h3 class="slideshow-section__subheading"><?=$block->slider_header?></h3>
         <h2 class="slideshow-section__heading"><?=$block->slider_title?></h2>
@@ -312,7 +312,7 @@
 
     <?php if ($block->repeater_matrix_type == 9): ?>
     <section id="albums" class="slideset-section"
-             style="background-image:url(<?= $config->urls->templates . 'assets/img/bg.jpg' ?>)">
+             style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="container container_center">
         <h3 class="slideset-section__subheading"><?=$block->slider_header?></h3>
         <h2 class="slideset-section__heading"><?=$block->slider_title?></h2>
@@ -346,7 +346,7 @@
     <?php endif; ?>
 
     <?php if ($block->repeater_matrix_type == 10): ?>
-    <section id="price" class="price" style="background-image:url(<?= $config->urls->templates . 'assets/img/boy.jpg' ?>)">
+    <section id="price" class="price" style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="price__wrapper">
         <div class="container container_center">
           <div class="price__panel">
@@ -380,8 +380,10 @@
             <div class="footer__socials">
               <a href="<?= $block->home_vkontakte ?>" target="_blank" class="footer__social footer__social_vk"></a>
               <a href="<?= $block->home_instagram ?>" target="_blank" class="footer__social footer__social_inst"></a>
+              <?php if (isset($block->home_whatsapp) && $block->home_whatsapp!=""): ?>
               <a href="https://api.whatsapp.com/send?phone=<?= $block->home_whatsapp ?>" target="_blank"
                  class="footer__social footer__social_whatsapp"></a>
+                 <?php endif; ?>
             </div>
           </div>
         </div>
@@ -492,7 +494,7 @@
     <?php if ($block->repeater_matrix_type == 14): ?>
     <section class="done">
       <div class="container container_center">
-        <h2 class="done__heading">Что уже сделано</h2>
+        <h2 class="done__heading"><?=$block->done_title?></h2>
         <div class="done__wrapper">
           <div class="done__grid">
               <?php foreach ($block->done as $item): ?>
