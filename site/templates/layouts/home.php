@@ -68,7 +68,7 @@
         <ul class="menu__nav">
             <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
               <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-                                        class="menu__link menu__link_contrast" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
+                                        class="menu__link menu__link_contrast" data-uk-smooth-scroll="{offset:68}"><?= $item->nameForNav ?></a></li>
             <?php endif; endforeach; ?>
         </ul>
       </div>
@@ -91,7 +91,7 @@
                 <ul class="menu__nav">
                     <?php foreach ($page->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
                       <li class="menu__item"><a href="#<?= $item->anchorForNav ?>"
-                                                class="menu__link" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
+                                                class="menu__link" data-uk-smooth-scroll="{offset:68}"><?= $item->nameForNav ?></a></li>
                     <?php endif; endforeach; ?>
                 </ul>
               </div>
@@ -193,9 +193,9 @@
         <p class="prices__description"><?= $block->prices_subtitle ?></p>
         <div class="prices__wrapper">
           <div class="prices__grid">
-              <?php foreach ($block->prices_items as $item): ?>
+              <?php foreach ($block->prices_items as $item): $delay_prcs+=200; ?>
                 <div class="prices__cell">
-                  <div class="prices__item prices-block">
+                  <div class="prices__item prices-block" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:<?=$delay_prcs?>}">
                     <h3 class="prices-block__heading"><?= $item->prices_item_name ?></h3>
                     <div class="prices-block__img"
                          style="background-image:url(<?= $config->urls->templates . 'assets/img/album1.svg' ?>)"></div>
@@ -270,7 +270,7 @@
       <div class="container container_center">
         <h3 class="slideshow-section__subheading"><?=$block->slider_header?></h3>
         <h2 class="slideshow-section__heading"><?=$block->slider_title?></h2>
-        <div class="uk-slidenav-position" data-uk-slideshow="{duration:300}">
+        <div class="uk-slidenav-position" data-uk-slideshow="{duration:500,animation:'scroll'}">
           <ul class="slideshow uk-slideshow slideshow-section__slideshow">
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
@@ -467,12 +467,12 @@
       <div class="container container_center">
         <div class="info__grid">
           <div class="info__cell">
+            <p>2006-2018 гг.</p>
+          </div>
+          <div class="info__cell">
             <div class="info__logo logo">
               <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
             </div>
-          </div>
-          <div class="info__cell">
-            <p>2006-2018 гг.</p>
           </div>
           <div class="info__cell">
             <p>ИП Чернятьев М.Н.</p>
@@ -495,8 +495,8 @@
         <h2 class="done__heading">Что уже сделано</h2>
         <div class="done__wrapper">
           <div class="done__grid">
-              <?php foreach ($block->done as $item): ?>
-                <div class="done__cell">
+              <?php foreach ($block->done as $item): $delay+=200; ?>
+                <div class="done__cell" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', delay:<?=$delay?>}">
                   <div class="done__circle">
                     <h3 class="done__number"><?=$item->number?></h3>
                   </div>
