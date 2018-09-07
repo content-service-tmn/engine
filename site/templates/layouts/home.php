@@ -197,7 +197,6 @@
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
-                      <a >callback</a>
                       <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить тариф</a>
                     </div>
                   </div>
@@ -273,8 +272,10 @@
                     </div>
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
-                        <a href="<?= $slide->slide_image->url ?>" data-uk-lightbox="{group:'mygroup'}"></a>
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
+                        <?php foreach($slide->slide_images as $image): ?>
+                        	<a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup".<?$block->id?>."'}"></a>
+                        <?php endforeach; ?>
                       </div>
                     </div>
                   </div>
@@ -306,10 +307,8 @@
                 <?php foreach ($block->slides as $slide): ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
-                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                        <?php foreach ($slide->slide_images as $i => $image): ?>
-                          <a href="<?= $image->url ?>" <?php if (!$i) echo 'class="slideset__link"' ?> data-uk-lightbox="{group:'1'}"></a>
-                        <?php endforeach; ?>
+                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
@@ -357,7 +356,7 @@
                 <li class="footer__item"><a href="tel:<?= phoneLink($phone) ?>"
                                             class="footer__link footer__link_phone"><?= $phone ?></a></li>
               <?php endforeach; ?>
-            <li class="footer__item"><a href="" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
+            <li class="footer__item"><a href="mailto:<?= $block->email ?>" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
           </ul>
           <div class="footer__socials-wrapper">
             <div class="footer__socials">
@@ -428,3 +427,49 @@
 
 <?php endforeach; ?>
 
+<section class="checks">
+  <div class="container container_center">
+    <div class="checks__grid">
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Фотосъемка в интерьере фотозоны	</p>
+        </div>
+      </div>
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Ретушь профессионального дизайнера	</p>
+        </div>
+      </div>
+      <div class="checks__cell">
+        <div class="checks__panel">
+          <p>Готовый дизайн проект альбома</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="container container_center">
+    <div class="info__grid">
+      <div class="info__cell">
+        <div class="info__logo logo">
+          <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
+        </div>
+      </div>
+      <div class="info__cell">
+        <p>2006-2018 гг.</p>
+      </div>
+      <div class="info__cell">
+        <p>ИП Чернятьев М.Н.</p>
+        <p>ОГРНИП 33443434322234</p>
+      </div>
+      <div class="info__cell">
+        <p>Есть вопросы? Звони!</p>
+        <p>
+          <a href="tel:900060" class="info__link">90-00-60</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
