@@ -197,7 +197,6 @@
                     <h3 class="prices-block__price"><?= $item->prices_item_price ?></h3>
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
-                      <a >callback</a>
                       <a href="#callback" data-uk-offcanvas="{mode:'slide'}" data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить тариф</a>
                     </div>
                   </div>
@@ -264,7 +263,7 @@
               <?php foreach ($block->slides as $slide): ?>
                 <li class="slideshow__cell">
                   <div class="slideshow__item">
-                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_images->first->url ?>)">
+                    <div class="slideshow__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
                     </div>
                     <div class="slideshow__panel">
                       <h3 class="slideshow__subheading"><?= $slide->slide_header ?></h3>
@@ -273,8 +272,10 @@
                     </div>
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
-                        <a href="<?= $slide->slide_image->url ?>" data-uk-lightbox="{group:'mygroup'}"></a>
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button" data-uk-lightbox="{group:'mygroup'}">Посмотреть все страницы</a>
+                        <?php foreach($slide->slide_images as $image): ?>
+                        	<a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup".<?$block->id?>."'}"></a>
+                        <?php endforeach; ?>
                       </div>
                     </div>
                   </div>
@@ -306,9 +307,8 @@
                 <?php foreach ($block->slides as $slide): ?>
                   <li class="slideset__cell">
                     <div class="slideset__item">
-                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_image->url ?>)">
-                        <a href="<?= $slide->slide_image->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
-                        <a href="https://pp.userapi.com/c850324/v850324648/1fcad/WW5c2UGgumU.jpg" data-uk-lightbox="{group:'1'}"></a>
+                      <div class="slideset__img" style="background-image: url(<?= $slide->slide_images->first()->url ?>)">
+                        <a href="<?= $slide->slide_images->first()->url ?>" class="slideset__link" data-uk-lightbox="{group:'1'}"></a>
                       </div>
                       <div class="slideset__panel">
                         <h3 class="slideset__subheading"><?= $slide->slide_header ?></h3>
@@ -356,7 +356,7 @@
                 <li class="footer__item"><a href="tel:<?= phoneLink($phone) ?>"
                                             class="footer__link footer__link_phone"><?= $phone ?></a></li>
               <?php endforeach; ?>
-            <li class="footer__item"><a href="" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
+            <li class="footer__item"><a href="mailto:<?= $block->email ?>" class="footer__link footer__link_mail"><?= $block->email ?></a></li>
           </ul>
           <div class="footer__socials-wrapper">
             <div class="footer__socials">
