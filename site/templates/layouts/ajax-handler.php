@@ -4,7 +4,7 @@ namespace Processwire;
 if ($config->ajax) {
     $m = $mail->new();
     $m->to($pages->get("id=1")->home_email_forms);
-    $m->from('noreply@fpotok.ru')
+    $m->from('maximumgt@yandex.ru')
         ->fromName("bot fpotok")
         ->subject('Обращение с сайта');
     $messageBody = "Новая заявка с сайта: \r\n";
