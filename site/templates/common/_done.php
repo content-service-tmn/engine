@@ -41,8 +41,8 @@
         </div>
       </form>
       <div class="sidebar__contacts">
-        <a href="" class="sidebar__contact sidebar__contact_phone">90-00-60</a>
-        <a href="" class="sidebar__contact ">fotopotok72@yandex.ru</a>
+        <a href="tel:900060" class="sidebar__contact sidebar__contact_phone">90-00-60</a>
+        <a href="mailto:fotopotok72@yandex.ru" class="sidebar__contact ">fotopotok72@yandex.ru</a>
       </div>
     </div>
   </div>
