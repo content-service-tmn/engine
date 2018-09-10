@@ -56,12 +56,9 @@
         <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
       </a>
       <ul class="sidebar__items">
-        <li><a href="#main" data-uk-smooth-scroll>главная</a></li>
-        <li><a href="#about" data-uk-smooth-scroll>о нас</a></li>
-        <li><a href="#salary" data-uk-smooth-scroll>твой доход</a></li>
-        <li><a href="#team" data-uk-smooth-scroll>команда</a></li>
-        <li><a href="#travel" data-uk-smooth-scroll>путешествия</a></li>
-        <li><a href="#benefits" data-uk-smooth-scroll>преимущества</a></li>
+          <?php foreach ($pages->get("id=1")->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+            <li><a href="#<?= $item->anchorForNav ?>" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
+          <?php endif; endforeach; ?>
       </ul>
     </div>
   </div>
