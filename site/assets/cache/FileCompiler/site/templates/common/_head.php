@@ -20,6 +20,7 @@
     "assets/uikit/js/components/slideshow.js",
     "assets/uikit/js/core/smooth-scroll.js",
     "assets/uikit/js/core/modal.js",
+    "assets/uikit/js/core/scrollspy.js",
     "assets/uikit/js/components/lightbox.js",
     "assets/uikit/js/core/offcanvas.js",
     "assets/uikit/js/components/notify.js",

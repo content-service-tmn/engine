@@ -41,9 +41,8 @@
         </div>
       </form>
       <div class="sidebar__contacts">
-        <a href="" class="sidebar__contact sidebar__contact_phone">+7897871239</a>
-        <a href="" class="sidebar__contact sidebar__contact_phone">+7040942398</a>
-        <a href="" class="sidebar__contact ">mail@mail.mail</a>
+        <a href="" class="sidebar__contact sidebar__contact_phone">90-00-60</a>
+        <a href="" class="sidebar__contact ">fotopotok72@yandex.ru</a>
       </div>
     </div>
   </div>
@@ -57,12 +56,9 @@
         <img src="<?= $config->urls->templates . 'assets/img/logo.png' ?>" alt="" class="logo__img">
       </a>
       <ul class="sidebar__items">
-        <li><a href="#main" data-uk-smooth-scroll>главная</a></li>
-        <li><a href="#about" data-uk-smooth-scroll>о нас</a></li>
-        <li><a href="#salary" data-uk-smooth-scroll>твой доход</a></li>
-        <li><a href="#team" data-uk-smooth-scroll>команда</a></li>
-        <li><a href="#travel" data-uk-smooth-scroll>путешествия</a></li>
-        <li><a href="#benefits" data-uk-smooth-scroll>преимущества</a></li>
+          <?php foreach ($pages->get("id=1")->blocks as $item): if (isset($item->anchorForNav) && isset($item->nameForNav) && $item->nameForNav != "" && $item->anchorForNav != ""): ?>
+            <li><a href="#<?= $item->anchorForNav ?>" data-uk-smooth-scroll><?= $item->nameForNav ?></a></li>
+          <?php endif; endforeach; ?>
       </ul>
     </div>
   </div>
@@ -71,7 +67,7 @@
 
 <script>
     function initMap() {
-      var coordinates= {lat: 57.169883, lng: 65.5453884},
+      var coordinates= {lat: 57.142001, lng: 65.598575},
           options = {
             zoom: 15,
             disableDefaultUI: true,
@@ -86,6 +82,10 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz-fa3z3jDQhfL6rwyNt3DEJ3XHbyoUHk&callback=initMap" async defer></script>
+
+
+<!— Yandex.Metrika counter —> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40623600 = new Ya.Metrika({ id:40623600, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40623600" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!— /Yandex.Metrika counter —>
+
 
 </body>
 

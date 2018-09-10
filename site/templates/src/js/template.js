@@ -42,7 +42,7 @@ $(document).ready(function() {
         source = $(this).data("source");
     });
 
-    $("#callback__form").on('submit', function (e) {
+    $(".sidebar__submit > .submit__button").on('click', function (e) {
         console.log(13);
         var name_filed = $("#name");
         var phone_filed = $("#phone");
@@ -99,7 +99,7 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $(".submit__button").on("click", function (e) {
+    $(".form__submit > .submit__button").on("click", function (e) {
         var validator = new RegExp($(this).data("validator"));
         var input = $("#"+$(this).data("input"));
         if (!validator.test(input.val())) {
