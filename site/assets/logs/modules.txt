@@ -50,3 +50,13 @@
 2018-09-08 15:00:03	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
 2018-09-08 15:00:08	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
 2018-09-08 15:02:26	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:48:28	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp	Saved module 'WireMailSmtp' config data
+2018-09-10 09:49:23	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:49:48	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:49:48	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:50:15	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:50:29	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:50:57	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:52:21	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:52:28	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-10 09:55:35	developer	http://www.fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
