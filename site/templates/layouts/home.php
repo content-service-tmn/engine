@@ -352,7 +352,7 @@
             <h3 class="price__heading"><?= $block->prices_title ?></h3>
             <ul class="price__list">
                 <?php foreach ($block->prices_table as $row): ?>
-                  <li class="price__item"><?= $row->name ?><span><?= $row->price ?></span></li>
+                  <li class="price__item"><div class="price__img" style="background-image:url(<?= $config->urls->templates . 'assets/img/1-01.svg' ?>)"></div><?= $row->name ?><span><?= $row->price ?></span></li>
                 <?php endforeach; ?>
             </ul>
           </div>
