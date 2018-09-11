@@ -60,3 +60,4 @@
 2018-09-10 09:52:21	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
 2018-09-10 09:52:28	developer	http://fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
 2018-09-10 09:55:35	developer	http://www.fpotok.ru/processwire/module/edit?name=WireMailSmtp&collapse_info=1	Saved module 'WireMailSmtp' config data
+2018-09-11 09:48:11	developer	http://www.fpotok.ru/processwire/setup/upgrades/	Saved module info caches
