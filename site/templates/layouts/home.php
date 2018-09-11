@@ -264,7 +264,7 @@
     </section>
     <?php endif; ?>
     <?php if ($block->repeater_matrix_type == 3): ?>
-    <section id="photoareas" class="slideshow-section"
+    <section id="albums" class="slideshow-section"
              style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="container container_center">
         <h3 class="slideshow-section__subheading"><?=$block->slider_header?></h3>
@@ -310,7 +310,7 @@
 
 
     <?php if ($block->repeater_matrix_type == 9): ?>
-    <section id="albums" class="slideset-section"
+    <section id="photoareas" class="slideset-section"
              style="background-image:url(<?= $block->background_image->url ?>)">
       <div class="container container_center">
         <h3 class="slideset-section__subheading"><?=$block->slider_header?></h3>
