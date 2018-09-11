@@ -149,7 +149,7 @@
             </p>
             <div class="benefits__button-wrapper">
               <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
-              data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform"><?= $slide->button_text ?></a>
+              data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform"><?= $block->button_text ?></a>
             </div>
           </div>
         </div>
