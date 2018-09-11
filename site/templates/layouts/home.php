@@ -144,7 +144,7 @@
         <div class="benefits__header">
           <h3 class="benefits__heading"><?= $block->benefits_title ?></h3>
           <div class="benefits__right">
-            <p class="benefits__description">
+            <p class="benefits__description" style="font-weight: 600; font-size: 24px; color:#69b53d">
               <?= $block->benefits_subtitle ?>
             </p>
             <div class="benefits__button-wrapper">
