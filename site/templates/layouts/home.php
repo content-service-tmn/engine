@@ -149,8 +149,7 @@
             </p>
             <div class="benefits__button-wrapper">
               <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
-              data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform">получить
-              консультацию</a>
+              data-source="Получить консультацию (блок преимуществ)" class="benefits__button callform"><?= $slide->button_text ?></a>
             </div>
           </div>
         </div>
@@ -285,7 +284,7 @@
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
                         <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button"
-                           data-uk-lightbox="{group:'mygroup<?= $id ?>'}"><?= $slide->slide_button_text ?></a>
+                           data-uk-lightbox="{group:'mygroup<?= $id ?>'}"><?= $slide->button_text ?></a>
                           <?php $i=0; foreach ($slide->slide_images as $image): if ($i!=0): ?>
                             <a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<?= $id ?>'}"></a>
                           <?php endif; $i++; endforeach; ?>
