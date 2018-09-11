@@ -203,8 +203,7 @@
                       <?= str_replace("<li>", "<li class=\"prices-block__item\">", str_replace("<ul>", "<ul class=\"prices-block__list\">", $item->prices_item_content)) ?>
                     <div class="prices-block__button-wrapper">
                       <a href="#callback" data-uk-offcanvas="{mode:'slide'}"
-                         data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">купить
-                        тариф</a>
+                         data-source="Купить <?= $item->prices_item_name ?>" class="prices-block__button callform">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -286,7 +285,7 @@
                     <div class="slideshow__panel">
                       <div class="slideshow__button-wrapper">
                         <a href="<?= $slide->slide_images->first()->url ?>" class="slideshow__button"
-                           data-uk-lightbox="{group:'mygroup<?= $id ?>'}">Посмотреть все страницы</a>
+                           data-uk-lightbox="{group:'mygroup<?= $id ?>'}"><?= $slide->slide_button_text ?></a>
                           <?php $i=0; foreach ($slide->slide_images as $image): if ($i!=0): ?>
                             <a href="<?= $image->url ?>" data-uk-lightbox="{group:'mygroup<?= $id ?>'}"></a>
                           <?php endif; $i++; endforeach; ?>
@@ -469,7 +468,7 @@
       <div class="container container_center">
         <div class="info__grid">
           <div class="info__cell">
-            <p>2006-2018 гг.</p>
+            <p>2015-2018 гг.</p>
           </div>
           <div class="info__cell">
             <div class="info__logo logo">
@@ -477,8 +476,8 @@
             </div>
           </div>
           <div class="info__cell">
-            <p>ИП Чернятьев М.Н.</p>
-            <p>ОГРНИП 33443434322234</p>
+            <p>ИП Чернятьева Е. А.</p>
+            <p>ОГРНИП 317723200054229</p>
           </div>
           <div class="info__cell">
             <p>Есть вопросы? Звони!</p>

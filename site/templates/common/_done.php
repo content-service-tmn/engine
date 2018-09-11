@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<!— Yandex.Metrika counter —> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40623600 = new Ya.Metrika({ id:40623600, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40623600" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!— /Yandex.Metrika counter —>
 
 
 
@@ -41,8 +42,8 @@
         </div>
       </form>
       <div class="sidebar__contacts">
-        <a href="" class="sidebar__contact sidebar__contact_phone">90-00-60</a>
-        <a href="" class="sidebar__contact ">fotopotok72@yandex.ru</a>
+        <a href="tel:900060" class="sidebar__contact sidebar__contact_phone">90-00-60</a>
+        <a href="mailto:fotopotok72@yandex.ru" class="sidebar__contact ">fotopotok72@yandex.ru</a>
       </div>
     </div>
   </div>
