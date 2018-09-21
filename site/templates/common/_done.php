@@ -66,6 +66,7 @@
 </div>
 
 
+
 <script>
     function initMap() {
       var coordinates= {lat: 57.142001, lng: 65.598575},
@@ -87,6 +88,25 @@
 
 <!— Yandex.Metrika counter —> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40623600 = new Ya.Metrika({ id:40623600, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40623600" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!— /Yandex.Metrika counter —>
 <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8"></script>
+
+<?php
+$js = AIOM::JS(array(
+    "assets/uikit/js/core/core.js",
+    "assets/uikit/js/core/utility.js",
+    "assets/uikit/js/components/slideset.js",
+    "assets/uikit/js/components/slideshow.js",
+    "assets/uikit/js/core/smooth-scroll.js",
+    "assets/uikit/js/core/modal.js",
+    "assets/uikit/js/core/scrollspy.js",
+    "assets/uikit/js/components/lightbox.js",
+    "assets/uikit/js/core/offcanvas.js",
+    "assets/uikit/js/components/notify.js",
+    "assets/js/template.js"
+));
+?>
+
+<script src="<?= $js; ?>"></script>
+
 
 </body>
 
